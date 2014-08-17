@@ -5,6 +5,11 @@ body {
     padding: 0;
 }
 
+#selectorTemplate,
+#kanjiTemplate {
+    display: none;
+}
+
 /* Layout */
 #container {
     max-width: 980px;
@@ -20,6 +25,14 @@ body {
 #container section,
 #container footer {
     padding: 15px;
+}
+
+#kanji-selector {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid red;
+    width: 40%;
 }
 
 .kanji-row {
@@ -57,5 +70,5 @@ body {
     box-sizing: border-box;
     display: inline-block;
     font-size: 65px;
-    text-align: center;    
+    text-align: center;
 }
