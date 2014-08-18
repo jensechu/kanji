@@ -44,11 +44,11 @@ body {
     display: inline-block;
 }
 
-.kanji-box:nth-child(n+3) {
+#content .kanji-box:nth-child(n+3) {
     color: rgba(0, 0, 0, 0.15);
 }
 
-.kanji-box:nth-child(n+5) {
+#content .kanji-box:nth-child(n+5) {
     color: white;
 }
 
@@ -60,6 +60,7 @@ body {
 
 .kanji-definition {
     margin: 0 30px 0 10px;
+    text-transform: capitalize;
 }
 
 .kanji-box {

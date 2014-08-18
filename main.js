@@ -14,41 +14,55 @@ Kanji = function() {
     kanji['onyomi']    = $selectedKanji.data('onyomi');
     kanji['kunyomi']   = $selectedKanji.data('kunyomi');
 
-    self._setKanjiRow(kanji);
+      self._setKanjiRow(kanji);
   }
 
   self._handleKanjiSelection = function() {
-    $selectableKanji = $kanjiSelectionBox.find('.kanji-box');
+    var $selectableKanji = $kanjiSelectionBox.find('.kanji-box');
 
     $selectableKanji.on('click', function() {
-      $selectedKanji = $(this);
+      var $selectedKanji = $(this);
+      var existingKanji  = $selectedKanji.data('character');
+      var selected       = $selectedKanji.hasClass('selected');
 
-      if ($selectedKanji.data('character')) {
+      $selectedKanji.toggleClass('selected');
+
+      if (existingKanji && !selected) {
         self._getKanjiData($selectedKanji);
+      }
+
+      else if (existingKanji && selected) {
+        self._removeKanjiRow(existingKanji);
       }
 
     });
   }
 
+  self._removeKanjiRow = function(existingKanji) {
+    $('.kanji-row[data-character="'+ existingKanji +'"]').remove();
+  }
+
   self._setKanjiRow = function(kanji) {
     $contentBox.append(self.KANJI_TEMPLATE);
-    $kanjiRow = $contentBox.children().last('.kanji-row');
 
-    $kanjiCharacter = $kanjiRow.find('.kanji-character');
-    $kanjiMeaning   = $kanjiRow.find('.kanji-meaning');
-    $kanjiOnyomi    = $kanjiRow.find('.kanji-onyomi');
-    $kanjiKunyomi   = $kanjiRow.find('.kanji-kunyomi');
+    var $kanjiRow       = $contentBox.children().last('.kanji-row');
+    var $kanjiCharacter = $kanjiRow.find('.kanji-character');
+    var $kanjiMeaning   = $kanjiRow.find('.kanji-meaning');
+    var $kanjiOnyomi    = $kanjiRow.find('.kanji-onyomi');
+    var $kanjiKunyomi   = $kanjiRow.find('.kanji-kunyomi');
 
 
     $kanjiCharacter.text(kanji.character);
     $kanjiMeaning.text(kanji.meaning);
     $kanjiOnyomi.text(kanji.onyomi);
     $kanjiKunyomi.text(kanji.kunyomi);
+
+    $kanjiRow.attr('data-character', kanji.character);
   }
 
   self._setKanjiSelector = function(kanji) {
     $kanjiSelectionBox.append(self.SELECTOR_TEMPLATE);
-    $kanjiSelector = $kanjiSelectionBox.children().last('li');
+    var $kanjiSelector = $kanjiSelectionBox.children().last('li');
 
     $kanjiSelector.attr({
       'data-character': kanji.character,
