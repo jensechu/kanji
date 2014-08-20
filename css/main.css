@@ -1,0 +1,75 @@
+/* Global */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#selectorTemplate,
+#kanjiTemplate {
+    display: none;
+}
+
+/* Layout */
+#container {
+    max-width: 980px;
+    min-width: 980px;
+    margin: 0 auto;
+}
+
+#container header {
+    padding-left: 0;
+}
+
+#container header,
+#container section,
+#container footer {
+    padding: 15px;
+}
+
+#kanji-selector {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid red;
+    width: 40%;
+}
+
+.kanji-row {
+    width: 100%;
+}
+
+.kanji-term,
+.kanji-definition {
+    display: inline-block;
+}
+
+#content .kanji-box:nth-child(n+3) {
+    color: rgba(0, 0, 0, 0.15);
+}
+
+#content .kanji-box:nth-child(n+5) {
+    color: white;
+}
+
+.kanji-term {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.kanji-definition {
+    margin: 0 30px 0 10px;
+    text-transform: capitalize;
+}
+
+.kanji-box {
+    margin-bottom: 5px;
+    width: 96px;
+    height: 96px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 65px;
+    text-align: center;
+}
