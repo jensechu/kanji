@@ -61,8 +61,10 @@ Kanji = function() {
   }
 
   self._setKanjiSelector = function(kanji) {
-    $kanjiSelectionBox.append(self.SELECTOR_TEMPLATE);
-    var $kanjiSelector = $kanjiSelectionBox.children().last('li');
+    var $categoryBox = $kanjiSelectionBox.find('[data-category="'+ kanji.category +'"]');
+    $categoryBox.append(self.SELECTOR_TEMPLATE);
+
+    var $kanjiSelector = $categoryBox.children().last('li');
 
     $kanjiSelector.attr({
       'data-character': kanji.character,

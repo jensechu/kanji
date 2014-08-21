@@ -17,31 +17,77 @@ body {
     margin: 0 auto;
 }
 
-#container header {
-    padding-left: 0;
-}
-
-#container header,
-#container section,
-#container footer {
+#header,
+#content,
+#footer {
     padding: 15px;
 }
 
-#kanji-selector {
-    position: absolute;
-    right: 0;
-    top: 0;
-    border: 1px solid red;
-    width: 40%;
+/*Kanji Selector */
+#kanjiSelectionBox {
+  position: fixed;
+  height: 500px;
+  width: 25%;
+  right: 0;
+  padding: 0 15px 15px 15px;
+  border-left: 1px solid #000;
+  background: rgba(255, 255, 255, 0.8);
 }
 
-.kanji-row {
+#kanjiSelectionBox .category {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+#kanjiSelectionBox .categoryBox {
+
+}
+
+#kanjiSelectionBox .kanji-box {
+    margin-bottom: 5px;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+}
+
+#kanjiSelectionBox .kanji-box.selected {
+  color: red;
+}
+
+/* Kanji Rows */
+
+#content .kanji-row {
     width: 100%;
 }
 
-.kanji-term,
-.kanji-definition {
+#content .kanji-term,
+#content .kanji-definition {
     display: inline-block;
+}
+
+#content .kanji-term {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#content .kanji-definition {
+    margin: 0 30px 0 10px;
+    text-transform: capitalize;
+}
+
+#content .kanji-box {
+    margin-bottom: 5px;
+    width: 96px;
+    height: 96px;
+    font-size: 65px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
 }
 
 #content .kanji-box:nth-child(n+3) {
@@ -50,26 +96,4 @@ body {
 
 #content .kanji-box:nth-child(n+5) {
     color: white;
-}
-
-.kanji-term {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 12px;
-}
-
-.kanji-definition {
-    margin: 0 30px 0 10px;
-    text-transform: capitalize;
-}
-
-.kanji-box {
-    margin-bottom: 5px;
-    width: 96px;
-    height: 96px;
-    border: 1px solid #000;
-    box-sizing: border-box;
-    display: inline-block;
-    font-size: 65px;
-    text-align: center;
 }

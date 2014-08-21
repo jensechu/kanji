@@ -1,25 +1,114 @@
 {"kanji": [
-    {"character": "日", 
+    {"character": "日",
      "meaning": "day, sun, Japan",
      "onyomi": "ニチ ジツ",
-     "kunyomi": "ひ -び"
+     "kunyomi": "ひ -び",
+     "category": "jlptn5"
     },
 
-    {"character": "国", 
+    {"character": "国",
      "meaning": "country",
      "onyomi": "コク ク",
-     "kunyomi": ""
+     "kunyomi": "",
+     "category": "jlptn5"
     },
 
-    {"character": "人", 
+    {"character": "人",
      "meaning": "person",
      "onyomi": "ジン ニン",
-     "kunyomi": "ひと -り"
+     "kunyomi": "ひと -り",
+     "category": "jlptn5"
     },
 
-    {"character": "一", 
+    {"character": "一",
      "meaning": "one",
      "onyomi": "イチ イツ ヒト",
-     "kunyomi": "ひと"
-    }
+     "kunyomi": "ひと",
+     "category": "jlptn5"
+   },
+
+   {"character": "年",
+    "meaning": "year",
+    "onyomi": "ネン ト",
+    "kunyomi": "",
+    "category": "jlptn5"
+   },
+
+   {"character": "大",
+    "meaning": "large, big",
+    "onyomi": "ダイ タイ",
+    "kunyomi": "おお",
+    "category": "jlptn5"
+   },
+
+   {"character": "十",
+    "meaning": "ten",
+    "onyomi": "ジュウ ",
+    "kunyomi": "とお",
+    "category": "jlptn5"
+   },
+
+   {"character": "二",
+    "meaning": "two",
+    "onyomi": "ニ",
+    "kunyomi": "ふた",
+    "category": "jlptn5"
+   },
+
+   {"character": "本",
+    "meaning": "book, present, main, true, real, counter for long things",
+    "onyomi": "ホン モ",
+    "kunyomi": "ひと -り",
+    "category": "jlptn5"
+  },
+
+  {"character": "中",
+   "meaning": "in, inside, middle, mean, center",
+   "onyomi": "チュウ アタ",
+   "kunyomi": "なか",
+   "category": "jlptn5"
+  },
+
+  {"character": "長",
+   "meaning": "long, leader",
+   "onyomi": "チョウ オ",
+   "kunyomi": "なが",
+   "category": "jlptn5"
+  },
+
+  {"character": "出",
+   "meaning": "exit, leave",
+   "onyomi": "シュツ",
+   "kunyomi": "で",
+   "category": "jlptn5"
+  },
+
+  {"character": "三",
+   "meaning": "three",
+   "onyomi": "サン",
+   "kunyomi": "み み",
+   "category": "jlptn5"
+  },
+
+  {"character": "時",
+   "meaning": "time, hour",
+   "onyomi": "ジ -ド",
+   "kunyomi": "とき",
+   "category": "jlptn5"
+  },
+
+  {"character": "行",
+   "meaning": "going, journey",
+   "onyomi": "コウ",
+   "kunyomi": "い",
+   "category": "jlptn5"
+  },
+
+  {"character": "見",
+   "meaning": "three",
+   "onyomi": "ケン",
+   "kunyomi": "み",
+   "category": "jlptn5"
+  }
+
 ]}
