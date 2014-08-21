@@ -26,7 +26,8 @@ body {
 /*Kanji Selector */
 #kanjiSelectionBox {
   position: fixed;
-  height: 500px;
+  height: 515px;
+  overflow: scroll;
   width: 25%;
   right: 0;
   padding: 0 15px 15px 15px;
@@ -37,10 +38,12 @@ body {
 #kanjiSelectionBox .category {
   font-size: 18px;
   margin-top: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #000;
 }
 
 #kanjiSelectionBox .categoryBox {
-
+  margin-bottom: 15px;
 }
 
 #kanjiSelectionBox .kanji-box {
