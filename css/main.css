@@ -25,11 +25,8 @@ body {
 
 /*Kanji Selector */
 #kanjiSelectionBox {
-  position: fixed;
-  height: 515px;
-  overflow: scroll;
   width: 25%;
-  right: 0;
+  float: right;
   padding: 0 15px 15px 15px;
   border-left: 1px solid #000;
   background: rgba(255, 255, 255, 0.8);
