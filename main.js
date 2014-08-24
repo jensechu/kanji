@@ -38,6 +38,15 @@ Kanji = function() {
     });
   }
 
+  self._handleSelectorExpansion = function() {
+    var $category = $kanjiSelectionBox.find('.category');
+
+    $category.on('click', function() {
+      $category.siblings('.category-content').toggleClass('expand');
+
+    });
+  }
+
   self._removeKanjiRow = function(existingKanji) {
     $('.kanji-row[data-character="'+ existingKanji +'"]').remove();
   }
@@ -61,8 +70,10 @@ Kanji = function() {
   }
 
   self._setKanjiSelector = function(kanji) {
-    $kanjiSelectionBox.append(self.SELECTOR_TEMPLATE);
-    var $kanjiSelector = $kanjiSelectionBox.children().last('li');
+    var $categoryBox = $kanjiSelectionBox.find('[data-category="'+ kanji.category +'"] .category-content');
+    $categoryBox.append(self.SELECTOR_TEMPLATE);
+
+    var $kanjiSelector = $categoryBox.children().last('li');
 
     $kanjiSelector.attr({
       'data-character': kanji.character,
@@ -81,6 +92,7 @@ Kanji = function() {
       });
     }).done(function(){
       self._handleKanjiSelection();
+      self._handleSelectorExpansion();
     });
   }
 

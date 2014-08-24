@@ -21,22 +21,57 @@ body {
     padding-left: 0;
 }
 
-#container header,
-#container section,
-#container footer {
-    padding: 15px;
+/*Kanji Selector */
+#kanjiSelectionBox {
+  position: fixed;
+  height: 515px;
+  width: 25%;
+  right: 0;
+  padding: 0 15px 15px 15px;
+  border-left: 1px solid #000;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+#kanjiSelectionBox .kanji-box {
+  margin-bottom: 5px;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+}
+
+#kanjiSelectionBox .kanji-box.selected {
+  color: #f00;
 }
 
 #kanji-selector {
-    position: absolute;
-    right: 0;
-    top: 0;
-    border: 1px solid red;
-    width: 40%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 1px solid red;
+  width: 40%;
 }
 
 .kanji-row {
-    width: 100%;
+  width: 100%;
+}
+
+#kanjiSelectionBox .category-content {
+  transition-property: all;
+  transition-duration: 1s;
+  height: 0;
+  overflow: hidden;
+}
+
+#kanjiSelectionBox .category-content.expand {
+  height: 200px;
+  overflow: scroll;
+}
+
+#kanjiSelectionBox .categoryBox {
+  margin-bottom: 15px;
 }
 
 .kanji-term,
@@ -63,7 +98,7 @@ body {
     text-transform: capitalize;
 }
 
-.kanji-box {
+#content .kanji-box {
     margin-bottom: 5px;
     width: 96px;
     height: 96px;
