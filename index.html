@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>cards</title>
-    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
@@ -10,68 +10,92 @@
     <div id="container">
 
       <header id="header">
-	       <h1>Kanji Worksheets</h1>
-      </header> <!-- HEADER -->
+	<h1>Kanji Worksheets</h1>
+  </header> <!-- HEADER -->
 
       <div id="kanjiSelectionBox">
+        <div class="categoryBox">
+          <div class="settings">
+            <input type="text" placeholder="search" class="kanjiSearch"/> <button class="kanjiSubmit">go</button>
+            <div class="kanjiStrokes">
+              <span>Strokes:</span> <span class="strokeToggle">&nbsp;</span>
+            </div>
+
+          </div>
+          <div class="settings-content">
+          </div>
+        </div>
         <div class="categoryBox" data-category="jlptn5">
           <h2 class="category">JLPT N5</h2>
+          <div class="category-content expand">
+          </div>
         </div>
         <div class="categoryBox" data-category="jlptn4">
           <h2 class="category">JLPT N4</h2>
+          <div class="category-content">
+          </div>
+        </div>
+        <div class="categoryBox" data-category="jlptn3">
+          <h2 class="category">JLPT N3</h2>
+          <div class="category-content">
+          </div>
+        </div>
+        <div class="categoryBox" data-category="jlptn2">
+          <h2 class="category">JLPT N2</h2>
+          <div class="category-content">
+          </div>
+        </div>
+        <div class="categoryBox" data-category="jlptn1">
+          <h2 class="category">JLPT N1</h2>
+          <div class="category-content">
+          </div>
         </div>
       </div> <!-- KANJI SELECTOR -->
-      <div id="content">
 
+      <div id="content" class="handwriting">
       </div> <!-- CONTENT -->
 
       <div id="footer">
       </div> <!-- FOOTER -->
 
-    </div> <!-- CONTAINER -->
-
-
-
-
-
-
-
-    <div id="selectorTemplate">
-      <div class="kanji-box"></div>
-    </div>
-
-    <div id="kanjiTemplate">
-      <div class="kanji-row">
-        <dl class="kanji-data">
-          <dt class="kanji-term">Meaning:</dt>
-          <dd class="kanji-definition kanji-meaning">Every</dd>
-
-          <dt class="kanji-term">On Reading:</dt>
-          <dd class="kanji-definition kanji-onyomi">マイ</dd>
-
-          <dt class="kanji-term">Kun Reading:</dt>
-          <dd class="kanji-definition kanji-kunyomi">ごと</dd>
-        </dl>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
-        <div class="kanji-box kanji-character"></div>
+      <div id="selectorTemplate">
+        <div class="kanji-box"></div>
       </div>
-    </div>
+
+      <div id="kanjiTemplate">
+        <div class="kanji-row">
+          <dl class="kanji-data">
+            <dt class="kanji-term">Meaning:</dt>
+            <dd class="kanji-definition kanji-meaning">Every</dd>
+
+            <dt class="kanji-term">On Reading:</dt>
+            <dd class="kanji-definition kanji-onyomi">マイ</dd>
+
+            <dt class="kanji-term">Kun Reading:</dt>
+            <dd class="kanji-definition kanji-kunyomi">ごと</dd>
+          </dl>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+          <div class="kanji-box kanji-character"></div>
+        </div>　<!-- KANJI ROW -->
+      </div>
+
+    </div> <!-- CONTAINER -->
 
     <script src="main.js"></script>
   </body>
