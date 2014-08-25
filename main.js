@@ -22,29 +22,50 @@ Kanji = function() {
 
     $selectableKanji.on('click', function() {
       var $selectedKanji = $(this);
-      var existingKanji  = $selectedKanji.data('character');
-      var selected       = $selectedKanji.hasClass('selected');
-
-      $selectedKanji.toggleClass('selected');
-
-      if (existingKanji && !selected) {
-        self._getKanjiData($selectedKanji);
-      }
-
-      else if (existingKanji && selected) {
-        self._removeKanjiRow(existingKanji);
-      }
-
+      self._selectKanji($selectedKanji);
     });
+  }
+
+  self._selectKanji = function($selectedKanji) {
+    var existingKanji  = $selectedKanji.data('character');
+    var selected       = $selectedKanji.hasClass('selected');
+
+    $selectedKanji.toggleClass('selected');
+
+    if (existingKanji && !selected) {
+      self._getKanjiData($selectedKanji);
+    }
+
+    else if (existingKanji && selected) {
+      self._removeKanjiRow(existingKanji);
+    }
   }
 
   self._handleSelectorExpansion = function() {
     var $category = $kanjiSelectionBox.find('.category');
 
     $category.on('click', function() {
-      $category.siblings('.category-content').toggleClass('expand');
+      var $selectedCategory = $(this);
+
+      $category.siblings('.category-content').removeClass('expand');
+      $selectedCategory.siblings('.category-content').addClass('expand');
 
     });
+  }
+
+  self._handleStrokeToggle = function() {
+    var $strokeToggle = $('.strokeToggle');
+
+    $strokeToggle.on('click', function() {
+      self.toggleStroke();
+    });
+  }
+
+  self.toggleStroke = function() {
+    var $strokeToggle = $('.strokeToggle');
+
+    $strokeToggle.toggleClass('selected');
+    self.$contentBox.toggleClass('stroke-order');
   }
 
   self._removeKanjiRow = function(existingKanji) {
@@ -85,6 +106,26 @@ Kanji = function() {
     $kanjiSelector.text(kanji.character);
   }
 
+  self._handleKanjiSearch = function() {
+    var $kanjiSearch = $('.kanjiSearch');
+    var $kanjiSubmit = $('.kanjiSubmit');
+
+    $kanjiSubmit.on('click', function() {
+      var kanji = $kanjiSearch.val();
+
+      self._searchKanji(kanji);
+    });
+  }
+
+  self._searchKanji = function(kanji) {
+    var $searchedKanji = $kanjiSelectionBox.find('[data-character="'+ kanji +'"]');
+    var kanjiExists    = $searchedKanji.length
+
+    if(kanjiExists){
+      self._selectKanji($searchedKanji);
+    }
+  }
+
   self._load = function(grade) {
     $.getJSON('data/'+ grade +'.json', function(data) {
       $.each( data.kanji, function( i, kanji ) {
@@ -93,6 +134,8 @@ Kanji = function() {
     }).done(function(){
       self._handleKanjiSelection();
       self._handleSelectorExpansion();
+      self._handleKanjiSearch();
+      self._handleStrokeToggle();
     });
   }
 

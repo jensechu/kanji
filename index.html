@@ -15,14 +15,14 @@
 
       <div id="kanjiSelectionBox">
         <div class="categoryBox">
-          <h2 class="category">SETTINGS</h2>
-          <div class="category-content">
-            <div class="stroke-selection">
-              <span class="stroke">Stroke Order:</span>
+          <div class="settings">
+            <input type="text" placeholder="search" class="kanjiSearch"/> <button class="kanjiSubmit">go</button>
+            <div class="kanjiStrokes">
+              <span>Strokes:</span> <span class="strokeToggle">&nbsp;</span>
             </div>
-            <div class="size-selection">
-              <span class="size">Kanji Size:</span>
-            </div>
+
+          </div>
+          <div class="settings-content">
           </div>
         </div>
         <div class="categoryBox" data-category="jlptn5">
@@ -52,7 +52,7 @@
         </div>
       </div> <!-- KANJI SELECTOR -->
 
-      <div id="content">
+      <div id="content" class="handwriting">
       </div> <!-- CONTENT -->
 
       <div id="footer">
