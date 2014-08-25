@@ -7,12 +7,12 @@ body {
 
 @font-face {
   font-family: StrokeOrder;
-  src: url('/fonts/KanjiStrokeOrders.ttf');
+  src: url('/kanji/fonts/KanjiStrokeOrders.ttf');
 }
 
 @font-face {
   font-family: Mitimasu;
-  src: url('/fonts/mitimasu.ttf');
+  src: url('/kanji/fonts/mitimasu.ttf');
 }
 
 #selectorTemplate,
@@ -41,6 +41,10 @@ body {
 }
 
 .kanjiSearch {
+  float: left;
+}
+
+.kanjiSubmit {
   float: left;
 }
 
