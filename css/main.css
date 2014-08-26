@@ -173,3 +173,9 @@ body {
     font-size: 65px;
     text-align: center;
 }
+
+@media print {
+  #kanjiSelectionBox {
+    display: none;
+  }
+}
