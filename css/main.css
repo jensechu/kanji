@@ -28,8 +28,9 @@ body {
 }
 
 #container header {
-    padding-left: 0;
+    padding: 20px 0 0 0;
 }
+
 
 /* Kanji Search */
 .settings {
