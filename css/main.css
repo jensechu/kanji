@@ -21,14 +21,12 @@ body {
 }
 
 /* Layout */
-#container {
-    max-width: 980px;
-    min-width: 980px;
-    margin: 0 auto;
+#container h1 {
+  margin: 0;
 }
 
-#container header {
-    padding-left: 0;
+#container {
+  padding: 15px 0 0 15px;
 }
 
 /* Kanji Search */
@@ -41,11 +39,15 @@ body {
 }
 
 .kanjiSearch {
-  float: left;
+  float: right;
+}
+
+.kanjiSubmit {
+  float: right;
 }
 
 .kanjiStrokes {
-  float: right;
+  float: left;
 }
 
 .kanjiStrokes .strokeToggle {
@@ -67,10 +69,11 @@ body {
 /*Kanji Selector */
 #kanjiSelectionBox {
   position: fixed;
-  height: 515px;
+  height: 100%;
   width: 25%;
   right: 0;
-  padding: 0 15px 15px 15px;
+  top: 0;
+  padding: 15px;
   border-left: 1px solid #000;
   background: rgba(255, 255, 255, 0.8);
 }
@@ -104,7 +107,7 @@ body {
 }
 
 #kanjiSelectionBox .category-content.expand {
-  height: 200px;
+  height: 290px;
   overflow: scroll;
 }
 
@@ -127,7 +130,8 @@ body {
 }
 
 .kanji-row {
-  width: 100%;
+  max-width: 980px;
+  float: left;
 }
 
 .kanji-term,
@@ -158,12 +162,22 @@ body {
 }
 
 #content .kanji-box {
-    margin-bottom: 5px;
+    margin: 0 5px 5px 0;
     width: 96px;
     height: 96px;
     border: 1px solid #000;
     box-sizing: border-box;
-    display: inline-block;
+    float: left;
     font-size: 65px;
     text-align: center;
+}
+
+@media print {
+  .kanji-row {
+    width: 980px;
+  }
+
+  #kanjiSelectionBox {
+    display: none;
+  }
 }
