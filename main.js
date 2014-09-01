@@ -73,13 +73,15 @@ Kanji = function() {
   }
 
   self._setKanjiRow = function(kanji) {
-    $contentBox.append(self.KANJI_TEMPLATE);
+    $contentBox.prepend(self.KANJI_TEMPLATE);
 
-    var $kanjiRow       = $contentBox.children().last('.kanji-row');
+    var $kanjiRow       = $contentBox.children().first('.kanji-row');
     var $kanjiCharacter = $kanjiRow.find('.kanji-character');
     var $kanjiMeaning   = $kanjiRow.find('.kanji-meaning');
     var $kanjiOnyomi    = $kanjiRow.find('.kanji-onyomi');
     var $kanjiKunyomi   = $kanjiRow.find('.kanji-kunyomi');
+
+    console.log(kanji.character);
 
 
     $kanjiCharacter.text(kanji.character);
