@@ -16,7 +16,7 @@
       <div id="kanjiSelectionBox">
         <div class="categoryBox">
           <div class="settings">
-            <button class="kanjiSubmit">go</button> <input type="text" placeholder="search" class="kanjiSearch"/> 
+            <button class="kanjiSubmit">Go</button> <input type="text" placeholder="Search Kanji" class="kanjiSearch"/>
             <div class="kanjiStrokes">
               <span>Strokes:</span> <span class="strokeToggle">&nbsp;</span>
             </div>
@@ -50,9 +50,21 @@
           <div class="category-content">
           </div>
         </div>
+        <div class="categoryBox" data-category="wanikani">
+          <h2 class="category">Wani Kani</h2>
+          <div class="category-content">
+            <div class="wanikaniContent">
+              <p>Grab kanji from your <a href="http://www.wanikani.com">WaniKani</a> account! Just paste in your API Key from the <a href="https://www.wanikani.com/account"> Account</a> page.</p>
+              <input type="text" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" class="inputWaniKaniUser"/>
+              <button class="submitWaniKaniUser">Sync</button>
+              <p>API Key is not saved or shared.</p>
+            </div>
+          </div>
+        </div>
       </div> <!-- KANJI SELECTOR -->
 
       <div id="content" class="handwriting">
+        <div id="test">
       </div> <!-- CONTENT -->
 
       <div id="footer">
@@ -97,6 +109,13 @@
 
     </div> <!-- CONTAINER -->
 
-    <script src="main.js"></script>
+    <script src="js/kanji.js"></script>
+    <script src="js/waniKani.js"></script>
+
+
+    <script>
+      window.Kanji._load();
+      window.WaniKani.init();
+    </script>
   </body>
 </html>
