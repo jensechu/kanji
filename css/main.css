@@ -46,8 +46,16 @@ body {
   float: right;
 }
 
+.inputWaniKaniUser {
+  width: 75%;
+}
+
 .kanjiStrokes {
   float: left;
+}
+
+.waniKaniContent {
+  font-size: 13px;
 }
 
 .kanjiStrokes .strokeToggle {
