@@ -187,6 +187,11 @@ body {
     page-break-inside: avoid;
   }
 
+  #content {
+    width: 980px;
+    float: left;
+  }
+
   #kanjiSelectionBox {
     display: none;
   }
