@@ -27,7 +27,7 @@ window.WaniKani = {
 
   loadUser: function(apiKey) {
     $.ajax({
-      url: 'https://www.wanikani.com/api/user/'+ apiKey +'/kanji/1',
+      url: 'https://www.wanikani.com/api/user/'+ apiKey +'/kanji/',
       type: 'GET',
       dataType: 'jsonp',
 
