@@ -84,6 +84,7 @@ body {
   padding: 15px;
   border-left: 1px solid #000;
   background: rgba(255, 255, 255, 0.8);
+  overflow: scroll;
 }
 
 #kanjiSelectionBox .kanji-box {
@@ -182,7 +183,8 @@ body {
 
 @media print {
   .kanji-row {
-    width: 980px;
+    width: 100%;
+    page-break-inside: avoid;
   }
 
   #kanjiSelectionBox {
