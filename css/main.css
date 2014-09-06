@@ -181,6 +181,22 @@ body {
     text-align: center;
 }
 
+.author {
+  position: absolute;
+  right: 15px;
+  bottom: 35px;
+  font-size: 12px;
+  z-index: 0;
+}
+
+.author a {
+  color: #E667AF;
+}
+
+.author a:hover {
+  color: #000;
+}
+
 @media print {
   .kanji-row {
     width: 100%;
