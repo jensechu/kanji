@@ -66,6 +66,16 @@
             </div>
           </div>
         </div>
+        <div class="categoryBox" data-category="anki">
+          <h2 class="category">Anki</h2>
+          <div class="category-content">
+            <div class="ankiContent">
+              <p>Path to your collection.anki2 file</p>
+              <input type="file" placeholder="C:\Users\<username>\Documents\Anki\<profile>\collection.anki2" class="inputAnkiCollection"/>
+              <button class="submitAnkiCollection">Load</button>
+            </div>
+          </div>
+        </div>
         <span class="author">made by <a href="https://twitter.com/jensechu">jensen</a> with &#9829;</span>
       </div> <!-- KANJI SELECTOR -->
 
@@ -123,11 +133,14 @@
 
     <script src="js/kanji.js"></script>
     <script src="js/waniKani.js"></script>
+    <script src="js/sql.js"></script>
+    <script src="js/anki.js"></script>
 
 
     <script>
       window.Kanji._load();
       window.WaniKani.init();
+      window.Anki.init();
     </script>
   </body>
 </html>
