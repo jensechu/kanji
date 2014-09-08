@@ -61,10 +61,13 @@ window.Anki = {
         currentObject.data = deck;
       }
       for(i = 1; i< deckBranch.length; i++){
-        if(currentObject[deckBranch[i]] === undefined){
-          currentObject[deckBranch[i]] = {};
+        if(currentObject.subDecks === undefined){
+          currentObject.subDecks = {};
         }
-        currentObject = currentObject[deckBranch[i]];
+        if(currentObject.subDecks[deckBranch[i]] === undefined){
+          currentObject.subDecks[deckBranch[i]] = {};
+        }
+        currentObject = currentObject.subDecks[deckBranch[i]];
 
 
         if(i  === deckBranch.length -1){
@@ -74,7 +77,45 @@ window.Anki = {
       }
 
     });
+    Anki._displayDecks();
     console.log(Anki.deckTree);
+  },
+
+  //display root decks of collection
+  _displayDecks : function(){
+    var $ankiContent = $('.ankiContent');
+    var $listRoot = $('<ul>');
+    $.each(Anki.deckTree, function(deckName, deck){
+      var $deckListElement = $('<li>');
+      var $deckListLable = $('<label>');
+      $deckListLable.text(deckName);
+      $deckListElement.append($deckListLable);
+      $listRoot.append($deckListElement)
+      if(deck.subDecks !== undefined){
+        Anki._addSubdecks($deckListElement, deck);
+      }
+    })
+
+    $ankiContent.append($listRoot);
+
+  },
+
+  //display subdecks of other decks, subdecks (this is a recursive function!)
+  _addSubdecks : function($deckListElement, currentDeck){
+    var $listRoot = $('<ul>');
+
+    $.each(currentDeck.subDecks, function(deckName, deck){
+      var $deckListElement = $('<li>');
+      var $deckListLable = $('<label>');
+      $deckListLable.text(deckName);
+      $deckListElement.append($deckListLable);
+      $listRoot.append($deckListElement)
+      if(deck.subDecks !== undefined){
+        Anki._addSubdecks($deckListElement, deck);
+      }
+    })
+
+    $deckListElement.append($listRoot);
   },
 
   //Todo: check if replacements done in AnkiDroid are necessary here too (desktop version does none)
