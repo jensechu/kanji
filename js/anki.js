@@ -1,7 +1,7 @@
 window.Anki = {
-  db : [],  //maybe support more than one collection: so an array it is
-
+  db : [],
   deckTree : {},
+  chosenDecks : {},
 
   handleLoadCollection : function() {
     var $ankiSubmit = $('.submitAnkiCollection');
@@ -11,7 +11,6 @@ window.Anki = {
        var file = $('.inputAnkiCollection')[0].files[0];
       if(file !== null){
         Anki.loadDbFile(file);
-
       }
     });
   },
@@ -68,16 +67,14 @@ window.Anki = {
           currentObject.subDecks[deckBranch[i]] = {};
         }
         currentObject = currentObject.subDecks[deckBranch[i]];
-
-
         if(i  === deckBranch.length -1){
           currentObject.data = deck;
         }
-
       }
 
     });
     Anki._displayDecks();
+    Anki._addCheckBoxClickHandler();
     console.log(Anki.deckTree);
   },
 
@@ -86,36 +83,85 @@ window.Anki = {
     var $ankiContent = $('.ankiContent');
     var $listRoot = $('<ul>');
     $.each(Anki.deckTree, function(deckName, deck){
+      var $deckCheckBox = $('<input>',{ 'type' : 'checkbox', 'id' : 'cb-'+deck.data.id, 'name' : deck.data.id });
+      $deckCheckBox.addClass('ankiDeckCheckbox').addClass('root-did'+deck.data.id);
       var $deckListElement = $('<li>');
-      var $deckListLable = $('<label>');
-      $deckListLable.text(deckName);
-      $deckListElement.append($deckListLable);
-      $listRoot.append($deckListElement)
+      var $deckListLabel = $('<label>').attr('for', 'cb-'+deck.data.id);
+      $deckListLabel.text(deckName);
+      $deckListElement.append($deckCheckBox);
+      $deckListElement.append($deckListLabel);
+      $listRoot.append($deckListElement);
       if(deck.subDecks !== undefined){
-        Anki._addSubdecks($deckListElement, deck);
+        Anki._addSubdecks($deckListElement, deck, [deck.data.id]);
       }
-    })
+    });
 
     $ankiContent.append($listRoot);
 
   },
 
   //display subdecks of other decks, subdecks (this is a recursive function!)
-  _addSubdecks : function($deckListElement, currentDeck){
+  _addSubdecks : function($deckListElement, currentDeck, rootDecks){
     var $listRoot = $('<ul>');
 
     $.each(currentDeck.subDecks, function(deckName, deck){
-      var $deckListElement = $('<li>');
-      var $deckListLable = $('<label>');
-      $deckListLable.text(deckName);
-      $deckListElement.append($deckListLable);
-      $listRoot.append($deckListElement)
-      if(deck.subDecks !== undefined){
-        Anki._addSubdecks($deckListElement, deck);
+      var $deckCheckBox = $('<input>',{ 'type' : 'checkbox', 'id' : 'cb-'+deck.data.id, 'name' : deck.data.id });
+      $deckCheckBox.addClass('ankiDeckCheckbox').addClass('root-did'+deck.data.id);
+      var i;
+      for(i = 0; i < rootDecks.length; i++){
+        $deckCheckBox.addClass('did'+rootDecks[i]);
       }
-    })
+      var $deckListElement = $('<li>');
+      var $deckListLabel = $('<label>').attr('for', 'cb-'+deck.data.id);
+      $deckListLabel.text(deckName);
+      $deckListElement.append($deckCheckBox);
+      $deckListElement.append($deckListLabel);
+      $listRoot.append($deckListElement);
+      if(deck.subDecks !== undefined){
+        var newRootDecks = rootDecks.slice();
+        console.log(newRootDecks);
+        newRootDecks.push(deck.data.id);
+        console.log(newRootDecks);
+        Anki._addSubdecks($deckListElement, deck, newRootDecks);
+      }
+    });
 
     $deckListElement.append($listRoot);
+  },
+
+  _addCheckBoxClickHandler : function(){
+    $('.ankiDeckCheckbox').on('click', function(e) {
+      var $thisBox = $(this);
+      var checkBoxClass;
+      if ($thisBox.prop('checked')) {
+        Anki.chosenDecks[$thisBox.attr('name')] = true;
+
+      } else {
+        Anki.chosenDecks[$thisBox.attr('name')] = false;
+      }
+      Anki._getKanjis();
+    });
+
+  },
+
+  _getKanjis : function(){
+    var db =  Anki.db[0];
+    var fldsQuery = "SELECT notes.flds FROM notes, cards " +
+      "WHERE cards.nid=notes.id " +
+      "   AND cards.did in " + Anki._getSelectedDecks();
+    console.log(fldsQuery);
+    var result = db.exec(fldsQuery);
+    console.log(result);
+  },
+
+  _getSelectedDecks : function(){
+    var selectedDecks = [];
+    $.each(Anki.chosenDecks, function(deck, is_chosen){
+      if(is_chosen){
+        selectedDecks.push(deck);
+      }
+    });
+    return '('+selectedDecks.join()+')';
   },
 
   //Todo: check if replacements done in AnkiDroid are necessary here too (desktop version does none)
