@@ -41,11 +41,22 @@ window.Anki = {
     var deckQuery = "SELECT decks FROM col";
     var result = db.exec(deckQuery);
     console.log(result);
-
     var decks = JSON.parse(result[0].values[0][0]);
+
+    var modelQuery = "SELECT models FROM col";
+    result = db.exec(modelQuery);
+    var models = JSON.parse(result[0].values[0][0]);
+    console.log(models);
+    Anki._parseModels(models);
+
+
     console.log(decks);
     Anki._parseDecks(decks);
     //console.log(Anki._parseFields(result[0].values[0][0]))
+  },
+
+  _parseModels : function(models) {
+
   },
 
   _parseDecks : function(decks) {
@@ -148,10 +159,14 @@ window.Anki = {
     var db =  Anki.db[0];
     var fldsQuery = "SELECT notes.flds FROM notes, cards " +
       "WHERE cards.nid=notes.id " +
-      "   AND cards.did in " + Anki._getSelectedDecks();
+      "   AND cards.did in " + Anki._getSelectedDecks() +
+      "group by notes.id";
     console.log(fldsQuery);
     var result = db.exec(fldsQuery);
     console.log(result);
+    if(result[0] != undefined) {
+      console.log(Anki._parseFields(result[0].values[0][0])[0]);
+    }
   },
 
   _getSelectedDecks : function(){
