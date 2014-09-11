@@ -1,0 +1,14 @@
+ul.ankiDeckList
+{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+ul.subDeckList
+{
+    list-style-type: none;
+}
+
+.ankiContent {
+    font-size: 13px;
+}
