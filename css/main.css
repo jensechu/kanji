@@ -124,6 +124,12 @@ body {
   margin-bottom: 15px;
 }
 
+#kanjiSelectionBox .subcategory {
+  font-size: 16px;
+  margin-bottom: 0px;
+  color: red;
+}
+
 #kanjiSelectionBox h3 {
   font-weight: bold;
   text-transform: uppercase;

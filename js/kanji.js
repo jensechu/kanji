@@ -92,6 +92,19 @@ window.Kanji =  {
 
   _setKanjiSelector: function(kanji) {
     var $categoryBox = Kanji.$kanjiSelectionBox.find('[data-category="'+ kanji.category +'"] .category-content');
+    
+    if (kanji.hasOwnProperty('subcategory')) {
+      var $subcategoryBox = $categoryBox.find('[data-subcategory="'+ kanji.subcategory + '"]');
+      
+      if ($subcategoryBox.size() == 0) {
+        $subcategoryBox = $categoryBox.append(
+        '    <div class="subcategoryBox" data-subcategory="'+ kanji.subcategory +'">' +
+        '      <h2 class="subcategory">'+ kanji.subcategory +'</h2>' +
+        '    </div>'
+        );
+      }
+      $categoryBox = $subcategoryBox;
+    }
     $categoryBox.append(Kanji.SELECTOR_TEMPLATE);
 
     var $kanjiSelector = $categoryBox.children().last('li');

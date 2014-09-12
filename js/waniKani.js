@@ -12,6 +12,7 @@ window.WaniKani = {
     var $selectedCategory = $('.categoryBox[data-category="wanikani"] h2');
     $.each(userKanji, function(i, kanji) {
       kanji['category'] = 'wanikani';
+      kanji['subcategory'] = 'Level ' + kanji['level'];
 
       window.Kanji._setKanjiSelector(kanji);
     });
