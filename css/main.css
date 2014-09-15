@@ -7,15 +7,16 @@ body {
 
 @font-face {
   font-family: StrokeOrder;
-  src: url('/fonts/KanjiStrokeOrders.ttf');
+  src: url('../fonts/KanjiStrokeOrders.ttf');
 }
 
 @font-face {
   font-family: Mitimasu;
-  src: url('/fonts/mitimasu.ttf');
+  src: url('../fonts/mitimasu.ttf');
 }
 
 #selectorTemplate,
+#subcategoryTemplate,
 #kanjiTemplate {
     display: none;
 }
@@ -95,6 +96,7 @@ body {
   box-sizing: border-box;
   display: inline-block;
   text-align: center;
+  cursor: pointer;
 }
 
 #kanjiSelectionBox .kanji-box.selected {
@@ -122,6 +124,14 @@ body {
 
 #kanjiSelectionBox .categoryBox {
   margin-bottom: 15px;
+}
+
+#kanjiSelectionBox .subcategory {
+  font-size: 16px;
+  margin-bottom: 0px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 #kanjiSelectionBox h3 {

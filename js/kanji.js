@@ -1,6 +1,7 @@
 window.Kanji =  {
 
   SELECTOR_TEMPLATE:    $('#selectorTemplate').html().trim(),
+  SUBCATEGORY_TEMPLATE: $('#subcategoryTemplate').html().trim(),
   KANJI_TEMPLATE:       $('#kanjiTemplate').html().trim(),
   $kanjiSelectionBox:   $('#kanjiSelectionBox'),
   $contentBox:          $('#content'),
@@ -92,9 +93,7 @@ window.Kanji =  {
 
   _setKanjiSelector: function(kanji) {
     var $categoryBox = Kanji.$kanjiSelectionBox.find('[data-category="'+ kanji.category +'"] .category-content');
-    $categoryBox.append(Kanji.SELECTOR_TEMPLATE);
-
-    var $kanjiSelector = $categoryBox.children().last('li');
+    var $kanjiSelector = $(Kanji.SELECTOR_TEMPLATE);
 
     $kanjiSelector.attr({
       'data-character': kanji.character,
@@ -102,8 +101,59 @@ window.Kanji =  {
       'data-onyomi':    kanji.onyomi,
       'data-kunyomi':   kanji.kunyomi
     });
-
     $kanjiSelector.text(kanji.character);
+
+    $categoryBox.append($kanjiSelector);
+  },
+  
+  _setKanjiArraySelectors: function(kanjiArray) {
+    var categorizedKanji = {};
+    var categoryNames = [];
+    var sortedKanji = [];
+
+    $.each(kanjiArray, function(i, kanji) {
+      if (!kanji.hasOwnProperty('subcategory')) {
+        kanji.subcategory = 'zzzz_unsorted';
+      }
+      if (!categorizedKanji.hasOwnProperty(kanji.subcategory)) {
+        categoryNames.push(kanji.subcategory);
+        categorizedKanji[kanji.subcategory] = [];
+      }
+      categorizedKanji[kanji.subcategory].push(kanji);
+    });
+
+    $.each(categoryNames, function(i, name) {
+      sortedKanji.push({'subcategory': name, 'kanji': categorizedKanji[name]});
+    });
+
+    var $categoryBox = Kanji.$kanjiSelectionBox.find('[data-category="'+ sortedKanji[0].kanji[0].category +'"] .category-content');
+    var subcategoryArray = [];
+    var kanjiSelector = '<div class="kanji-box" data-character="CHARACTER" data-meaning="MEANING" data-onyomi="ONYOMI" data-kunyomi="KUNYOMI">CHARACTER</div>';
+    $.each(sortedKanji, function(i, subcategory) {
+      var $subcategoryBox = $(Kanji.SUBCATEGORY_TEMPLATE.replace(/SUBCATEGORY/g, subcategory.subcategory));
+      var kanjiSelectorArray = '';
+
+      $.each(subcategory.kanji, function(i, kanji) {
+        kanjiSelectorArray = kanjiSelectorArray.concat(
+          kanjiSelector
+            .replace(/CHARACTER/g,kanji.character)
+            .replace(/MEANING/,kanji.meaning)
+            .replace(/ONYOMI/,kanji.onyomi)
+            .replace(/KUNYOMI/,kanji.kunyomi)
+        );
+      });
+
+      $subcategoryBox.append($(kanjiSelectorArray));
+      $subcategoryBox.children(":first").on('click', function(ev) {
+        var $kanji = $(this).siblings('.kanji-box');
+        test = $kanji;
+        for (var idx = $kanji.length; idx >= 0; idx--) {
+          Kanji._selectKanji($(test[idx]));
+        }
+      });
+      subcategoryArray.push($subcategoryBox);
+      $categoryBox.append(subcategoryArray);
+    });
   },
 
   _handleKanjiSearch: function() {
@@ -129,7 +179,7 @@ window.Kanji =  {
   _load: function() {
     $.getJSON('data/kanji.json', function(data) {
       $.each( data.kanji, function( i, kanji ) {
-	       Kanji._setKanjiSelector(kanji);
+        Kanji._setKanjiSelector(kanji);
       });
     }).done(function(){
       Kanji._handleKanjiSelection();
