@@ -1,46 +1,3 @@
-/*
- * Natural Sort algorithm for Javascript - Version 0.7 - Released under MIT license
- * Author: Jim Palmer (based on chunking idea from Dave Koelle)
- */
- function naturalSort (a, b) {
-    var re = /(^-?[0-9]+(\.?[0-9]*)[df]?e?[0-9]?$|^0x[0-9a-f]+$|[0-9]+)/gi,
-        sre = /(^[ ]*|[ ]*$)/g,
-        dre = /(^([\w ]+,?[\w ]+)?[\w ]+,?[\w ]+\d+:\d+(:\d+)?[\w ]?|^\d{1,4}[\/\-]\d{1,4}[\/\-]\d{1,4}|^\w+, \w+ \d+, \d{4})/,
-        hre = /^0x[0-9a-f]+$/i,
-        ore = /^0/,
-        i = function(s) { return naturalSort.insensitive && (''+s).toLowerCase() || ''+s },
-        // convert all to strings strip whitespace
-        x = i(a).replace(sre, '') || '',
-        y = i(b).replace(sre, '') || '',
-        // chunk/tokenize
-        xN = x.replace(re, '\0$1\0').replace(/\0$/,'').replace(/^\0/,'').split('\0'),
-        yN = y.replace(re, '\0$1\0').replace(/\0$/,'').replace(/^\0/,'').split('\0'),
-        // numeric, hex or date detection
-        xD = parseInt(x.match(hre)) || (xN.length != 1 && x.match(dre) && Date.parse(x)),
-        yD = parseInt(y.match(hre)) || xD && y.match(dre) && Date.parse(y) || null,
-        oFxNcL, oFyNcL;
-    // first try and sort Hex codes or Dates
-    if (yD)
-        if ( xD < yD ) return -1;
-        else if ( xD > yD ) return 1;
-    // natural sorting through split numeric strings and default strings
-    for(var cLoc=0, numS=Math.max(xN.length, yN.length); cLoc < numS; cLoc++) {
-        // find floats not starting with '0', string or 0 if not defined (Clint Priest)
-        oFxNcL = !(xN[cLoc] || '').match(ore) && parseFloat(xN[cLoc]) || xN[cLoc] || 0;
-        oFyNcL = !(yN[cLoc] || '').match(ore) && parseFloat(yN[cLoc]) || yN[cLoc] || 0;
-        // handle numeric vs string comparison - number < string - (Kyle Adams)
-        if (isNaN(oFxNcL) !== isNaN(oFyNcL)) { return (isNaN(oFxNcL)) ? 1 : -1; }
-        // rely on string comparison if different types - i.e. '02' < 2 != '02' < '2'
-        else if (typeof oFxNcL !== typeof oFyNcL) {
-            oFxNcL += '';
-            oFyNcL += '';
-        }
-        if (oFxNcL < oFyNcL) return -1;
-        if (oFxNcL > oFyNcL) return 1;
-    }
-    return 0;
-}
-
 window.Kanji =  {
 
   SELECTOR_TEMPLATE:    $('#selectorTemplate').html().trim(),
@@ -137,39 +94,6 @@ window.Kanji =  {
   _setKanjiSelector: function(kanji) {
     var $categoryBox = Kanji.$kanjiSelectionBox.find('[data-category="'+ kanji.category +'"] .category-content');
     var $kanjiSelector = $(Kanji.SELECTOR_TEMPLATE);
-	
-    if (kanji.hasOwnProperty('subcategory')) {
-      var $subcategoryBox = $categoryBox.find('[data-subcategory="'+ kanji.subcategory + '"]');
-
-      if ($subcategoryBox.size() == 0) {
-        var $subcategoryArray = $categoryBox.find('.subcategory');
-        var $newSubcategoryBox = $(Kanji.SUBCATEGORY_TEMPLATE.replace(/SUBCATEGORY/g, kanji.subcategory));
-        var cnt = $subcategoryArray.length;
-        var idx = 0;
-        
-        for (; idx < cnt; idx++) {
-          if (naturalSort(kanji.subcategory, $subcategoryArray[idx].textContent) < 0) {
-            $newSubcategoryBox.insertBefore($subcategoryArray[idx].parentElement);
-            break;
-          }
-        }
-        if (idx >= cnt) {
-          $categoryBox.append($newSubcategoryBox);
-        }
-		$subcategoryBox = $newSubcategoryBox;
-
-		$subcategoryBox.children('.subcategory').on('click', function(ev) {
-          var $kanji = $(this).siblings('.kanji-box');
-		  test = $kanji;
-		  for (var idx = $kanji.length; idx >= 0; idx--) {
-		    Kanji._selectKanji($(test[idx]));
-		  }
-		});
-      }
-
-      $categoryBox = $subcategoryBox;
-    }
-    $categoryBox.append($kanjiSelector);
 
     $kanjiSelector.attr({
       'data-character': kanji.character,
@@ -177,8 +101,59 @@ window.Kanji =  {
       'data-onyomi':    kanji.onyomi,
       'data-kunyomi':   kanji.kunyomi
     });
-
     $kanjiSelector.text(kanji.character);
+
+    $categoryBox.append($kanjiSelector);
+  },
+  
+  _setKanjiArraySelectors: function(kanjiArray) {
+    var categorizedKanji = {};
+    var categoryNames = [];
+    var sortedKanji = [];
+
+    $.each(kanjiArray, function(i, kanji) {
+      if (!kanji.hasOwnProperty('subcategory')) {
+        kanji.subcategory = 'zzzz_unsorted';
+      }
+      if (!categorizedKanji.hasOwnProperty(kanji.subcategory)) {
+        categoryNames.push(kanji.subcategory);
+        categorizedKanji[kanji.subcategory] = [];
+      }
+      categorizedKanji[kanji.subcategory].push(kanji);
+    });
+
+    $.each(categoryNames, function(i, name) {
+      sortedKanji.push({'subcategory': name, 'kanji': categorizedKanji[name]});
+    });
+
+    var $categoryBox = Kanji.$kanjiSelectionBox.find('[data-category="'+ sortedKanji[0].kanji[0].category +'"] .category-content');
+    var subcategoryArray = [];
+    var kanjiSelector = '<div class="kanji-box" data-character="CHARACTER" data-meaning="MEANING" data-onyomi="ONYOMI" data-kunyomi="KUNYOMI">CHARACTER</div>';
+    $.each(sortedKanji, function(i, subcategory) {
+      var $subcategoryBox = $(Kanji.SUBCATEGORY_TEMPLATE.replace(/SUBCATEGORY/g, subcategory.subcategory));
+      var kanjiSelectorArray = '';
+
+      $.each(subcategory.kanji, function(i, kanji) {
+        kanjiSelectorArray = kanjiSelectorArray.concat(
+          kanjiSelector
+            .replace(/CHARACTER/g,kanji.character)
+            .replace(/MEANING/,kanji.meaning)
+            .replace(/ONYOMI/,kanji.onyomi)
+            .replace(/KUNYOMI/,kanji.kunyomi)
+        );
+      });
+
+      $subcategoryBox.append($(kanjiSelectorArray));
+      $subcategoryBox.children(":first").on('click', function(ev) {
+        var $kanji = $(this).siblings('.kanji-box');
+        test = $kanji;
+        for (var idx = $kanji.length; idx >= 0; idx--) {
+          Kanji._selectKanji($(test[idx]));
+        }
+      });
+      subcategoryArray.push($subcategoryBox);
+      $categoryBox.append(subcategoryArray);
+    });
   },
 
   _handleKanjiSearch: function() {
@@ -204,7 +179,7 @@ window.Kanji =  {
   _load: function() {
     $.getJSON('data/kanji.json', function(data) {
       $.each( data.kanji, function( i, kanji ) {
-	       Kanji._setKanjiSelector(kanji);
+        Kanji._setKanjiSelector(kanji);
       });
     }).done(function(){
       Kanji._handleKanjiSelection();

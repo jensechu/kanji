@@ -10,13 +10,16 @@ window.WaniKani = {
 
   setUserKanji: function(userKanji) {
     var $selectedCategory = $('.categoryBox[data-category="wanikani"] h2');
+    userKanji.sort(function(a, b) {
+      if (a.level < b.level) return -1;
+      if (a.level > b.level) return 1;
+      return 0;
+    });
     $.each(userKanji, function(i, kanji) {
       kanji['category'] = 'wanikani';
       kanji['subcategory'] = 'Level ' + kanji['level'];
-
-      window.Kanji._setKanjiSelector(kanji);
     });
-
+    window.Kanji._setKanjiArraySelectors(userKanji);
     window.Kanji.sectionExpansion($selectedCategory);
   },
 
