@@ -2,6 +2,7 @@ window.Kanji =  {
 
   SELECTOR_TEMPLATE:    $('#selectorTemplate').html().trim(),
   KANJI_TEMPLATE:       $('#kanjiTemplate').html().trim(),
+  SUBCATEGORY_TEMPLATE: $('#subCategoryTemplate').html().trim(),
   $kanjiSelectionBox:   $('#kanjiSelectionBox'),
   $contentBox:          $('#content'),
   $category:            $('#kanjiSelectionBox .category'),
@@ -90,11 +91,33 @@ window.Kanji =  {
     Kanji.$contentBox.prepend($kanjiRow);
   },
 
-  _setKanjiSelector: function(kanji) {
+  _setKanjiCategory: function(kanji) {
     var $categoryBox = Kanji.$kanjiSelectionBox.find('[data-category="'+ kanji.category +'"] .category-content');
-    $categoryBox.append(Kanji.SELECTOR_TEMPLATE);
 
-    var $kanjiSelector = $categoryBox.children().last('li');
+    if (kanji.subCategory) {
+      var $subCategory = $categoryBox.find('[data-subcategory="' + kanji.subCategory + '"]');
+      var subCategorySet = $subCategory.length;
+
+      if(!subCategorySet) {
+        var $subCategory = $(Kanji.SUBCATEGORY_TEMPLATE);
+
+        $subCategory.attr('data-subcategory', kanji.subCategory);
+        $categoryBox.append($subCategory);
+      };
+
+      Kanji._setKanjiSelector(kanji, $subCategory);
+      return;
+    };
+
+    Kanji._setKanjiSelector(kanji, $category);
+  },
+
+  _setKanjiSelector: function(kanji, $container) {
+    // Needs to be a new function that gets a kanji and element to set in
+    var $container = $container;
+    $container.append(Kanji.SELECTOR_TEMPLATE);
+
+    var $kanjiSelector = $container.children().last('li');
 
     $kanjiSelector.attr({
       'data-character': kanji.character,
@@ -129,7 +152,8 @@ window.Kanji =  {
   _load: function() {
     $.getJSON('data/kanji.json', function(data) {
       $.each( data.kanji, function( i, kanji ) {
-	       Kanji._setKanjiSelector(kanji);
+        var $category = Kanji.$kanjiSelectionBox.find('[data-category="'+ kanji.category +'"] .category-content');
+	       Kanji._setKanjiSelector(kanji, $category);
       });
     }).done(function(){
       Kanji._handleKanjiSelection();
