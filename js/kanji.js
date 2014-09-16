@@ -2,6 +2,7 @@ window.Kanji =  {
 
   SELECTOR_TEMPLATE:    $('#selectorTemplate').html().trim(),
   KANJI_TEMPLATE:       $('#kanjiTemplate').html().trim(),
+  SUBCATEGORY_TEMPLATE: $('#subCategoryTemplate').html().trim(),
   $kanjiSelectionBox:   $('#kanjiSelectionBox'),
   $contentBox:          $('#content'),
   $category:            $('#kanjiSelectionBox .category'),
@@ -74,7 +75,7 @@ window.Kanji =  {
     $('.kanji-row[data-character="'+ existingKanji +'"]').remove();
   },
 
-  _setKanjiRow: function(kanji, cb) {
+  _setKanjiRow: function(kanji) {
     var $kanjiRow       = $(Kanji.KANJI_TEMPLATE);
     var $kanjiCharacter = $kanjiRow.find('.kanji-character');
     var $kanjiMeaning   = $kanjiRow.find('.kanji-meaning');
@@ -90,11 +91,34 @@ window.Kanji =  {
     Kanji.$contentBox.prepend($kanjiRow);
   },
 
-  _setKanjiSelector: function(kanji) {
+  _setKanjiCategory: function(kanji) {
     var $categoryBox = Kanji.$kanjiSelectionBox.find('[data-category="'+ kanji.category +'"] .category-content');
-    $categoryBox.append(Kanji.SELECTOR_TEMPLATE);
 
-    var $kanjiSelector = $categoryBox.children().last('li');
+    if (kanji.subCategory) {
+      var $subCategory = $categoryBox.find('[data-subcategory="' + kanji.subCategory + '"]');
+      var subCategorySet = $subCategory.length;
+
+      if(!subCategorySet) {
+        var $subCategory      = $(Kanji.SUBCATEGORY_TEMPLATE);
+        var $subCategoryTitle = $subCategory.find('.subcategory-title');
+
+        $subCategory.attr('data-subcategory', kanji.subCategory);
+        $subCategoryTitle.text(kanji.subCategory);
+        $categoryBox.prepend($subCategory);
+      };
+
+      Kanji._setKanjiSelector(kanji, $subCategory);
+      return;
+    };
+
+    Kanji._setKanjiSelector(kanji, $categoryBox);
+  },
+
+  _setKanjiSelector: function(kanji, $container) {
+    var $container = $container;
+    $container.append(Kanji.SELECTOR_TEMPLATE);
+
+    var $kanjiSelector = $container.children().last('li');
 
     $kanjiSelector.attr({
       'data-character': kanji.character,
@@ -129,7 +153,8 @@ window.Kanji =  {
   _load: function() {
     $.getJSON('data/kanji.json', function(data) {
       $.each( data.kanji, function( i, kanji ) {
-	       Kanji._setKanjiSelector(kanji);
+        var $category = Kanji.$kanjiSelectionBox.find('[data-category="'+ kanji.category +'"] .category-content');
+	      Kanji._setKanjiCategory(kanji);
       });
     }).done(function(){
       Kanji._handleKanjiSelection();
