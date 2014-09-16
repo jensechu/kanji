@@ -17,21 +17,20 @@ window.WaniKani = {
       kanji['category']    = 'wanikani';
       kanji['subCategory'] = kanji.level;
 
-//      window.Kanji._setKanjiSelector(kanji);
-        window.Kanji._setKanjiCategory(kanji);
+      window.Kanji._setKanjiCategory(kanji);
     });
 
     window.Kanji.sectionExpansion($selectedCategory);
   },
 
   _setSubLevels: function(userLevel) {
-    $category         = $('.categoryBox[data-category="wanikani"]');
-    $subLevelTemplate = $(WaniKani.SUBLEVEL_TEMPLATE);
+    var $category         = $('.categoryBox[data-category="wanikani"] .category-content');
+    var $subLevelTemplate = $(WaniKani.SUBLEVEL_TEMPLATE);
+    var $subLevelTitle    = $subLevelTemplate.find('.subcategory-title');
 
-    console.log(userLevel);
-
-    for(i=1; i<userLevel; i++){
+    for(i=1; i<=userLevel; i++){
       $subLevelTemplate.attr('data-subcategory', i);
+      $subLevelTitle.text('Level '+ i);
       $category.append($subLevelTemplate);
     };
   },
@@ -44,7 +43,7 @@ window.WaniKani = {
 
   _loadUser: function(apiKey) {
     $.ajax({
-      url: 'https://www.wanikani.com/api/user/2c513c485c89382ec519382cd45e7ee9/kanji/',
+      url: 'https://www.wanikani.com/api/user/' + apiKey +  '/kanji/',
       type: 'GET',
       dataType: 'jsonp',
 

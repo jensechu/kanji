@@ -75,7 +75,7 @@ window.Kanji =  {
     $('.kanji-row[data-character="'+ existingKanji +'"]').remove();
   },
 
-  _setKanjiRow: function(kanji, cb) {
+  _setKanjiRow: function(kanji) {
     var $kanjiRow       = $(Kanji.KANJI_TEMPLATE);
     var $kanjiCharacter = $kanjiRow.find('.kanji-character');
     var $kanjiMeaning   = $kanjiRow.find('.kanji-meaning');
@@ -99,21 +99,22 @@ window.Kanji =  {
       var subCategorySet = $subCategory.length;
 
       if(!subCategorySet) {
-        var $subCategory = $(Kanji.SUBCATEGORY_TEMPLATE);
+        var $subCategory      = $(Kanji.SUBCATEGORY_TEMPLATE);
+        var $subCategoryTitle = $subCategory.find('.subcategory-title');
 
         $subCategory.attr('data-subcategory', kanji.subCategory);
-        $categoryBox.append($subCategory);
+        $subCategoryTitle.text(kanji.subCategory);
+        $categoryBox.prepend($subCategory);
       };
 
       Kanji._setKanjiSelector(kanji, $subCategory);
       return;
     };
 
-    Kanji._setKanjiSelector(kanji, $category);
+    Kanji._setKanjiSelector(kanji, $categoryBox);
   },
 
   _setKanjiSelector: function(kanji, $container) {
-    // Needs to be a new function that gets a kanji and element to set in
     var $container = $container;
     $container.append(Kanji.SELECTOR_TEMPLATE);
 
@@ -153,7 +154,7 @@ window.Kanji =  {
     $.getJSON('data/kanji.json', function(data) {
       $.each( data.kanji, function( i, kanji ) {
         var $category = Kanji.$kanjiSelectionBox.find('[data-category="'+ kanji.category +'"] .category-content');
-	       Kanji._setKanjiSelector(kanji, $category);
+	      Kanji._setKanjiCategory(kanji);
       });
     }).done(function(){
       Kanji._handleKanjiSelection();
