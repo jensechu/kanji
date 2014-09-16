@@ -31,7 +31,7 @@ window.WaniKani = {
     for(i=1; i<=userLevel; i++){
       $subLevelTemplate.attr('data-subcategory', i);
       $subLevelTitle.text('Level '+ i);
-      $category.append($subLevelTemplate);
+      $category.append($subLevelTemplate.clone());
     };
   },
 
