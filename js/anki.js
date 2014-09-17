@@ -436,7 +436,7 @@ window.Anki = {
     var $selectedCategory = $('.categoryBox[data-category="anki"] h2');
     $.each(Anki.kanjiList, function(i, kanji) {
       if(typeof kanji !== 'string'){
-        window.Kanji._setKanjiSelector(kanji);
+        window.Kanji._setKanjiCategory(kanji);
       }
     });
     window.Kanji.sectionExpansion($selectedCategory);
