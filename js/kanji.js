@@ -4,6 +4,7 @@ window.Kanji =  {
   KANJI_TEMPLATE:       $('#kanjiTemplate').html().trim(),
   SUBCATEGORY_TEMPLATE: $('#subCategoryTemplate').html().trim(),
   $kanjiSelectionBox:   $('#kanjiSelectionBox'),
+  $selectAllCheck:      $('.category-checkbox'),
   $contentBox:          $('#content'),
   $category:            $('#kanjiSelectionBox .category'),
 
@@ -15,13 +16,30 @@ window.Kanji =  {
     kanji['onyomi']    = $selectedKanji.data('onyomi');
     kanji['kunyomi']   = $selectedKanji.data('kunyomi');
 
-      Kanji._setKanjiRow(kanji);
+    Kanji._setKanjiRow(kanji);
   },
 
   _handleKanjiSelection: function() {
     Kanji.$kanjiSelectionBox.on('click', '.kanji-box', function(ev) {
       var $selectedKanji = $(ev.currentTarget);
       Kanji._selectKanji($selectedKanji);
+    });
+
+    console.log('lolll');
+
+    Kanji.$selectAllCheck.on('click', function(ev) {
+      var $selectedCategory = $(ev.currentTarget);
+      var $selectedKanji    = $selectedCategory.parent().parent().find('.kanji-box');
+      console.log('lol');
+
+      $selectedCategory.toggleClass('checked');
+      Kanji._toggleAllKanji($selectedKanji);
+    });
+  },
+
+  _toggleAllKanji: function($selectedKanji) {
+    $selectedKanji.each(function() {
+      Kanji._selectKanji($(this));
     });
   },
 

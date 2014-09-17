@@ -7,12 +7,14 @@ window.WaniKani = {
 
     $waniKaniSubmit.on('click', function() {
       var apiKey = $('.inputWaniKaniUser').val().trim();
+
       WaniKani._loadUser(apiKey);
     });
   },
 
   _setUserKanji: function(userKanji) {
     var $selectedCategory = $('.categoryBox[data-category="wanikani"] h2');
+
     $.each(userKanji, function(i, kanji) {
       kanji['category']    = 'wanikani';
       kanji['subCategory'] = kanji.level;
@@ -24,15 +26,18 @@ window.WaniKani = {
   },
 
   _setSubLevels: function(userLevel) {
-    var $category         = $('.categoryBox[data-category="wanikani"] .category-content');
-    var $subLevelTemplate = $(WaniKani.SUBLEVEL_TEMPLATE);
-    var $subLevelTitle    = $subLevelTemplate.find('.subcategory-title');
+    var $category = $('.categoryBox[data-category="wanikani"] .category-content');
 
     for(i=1; i<=userLevel; i++){
+      var $subLevelTemplate = $(WaniKani.SUBLEVEL_TEMPLATE);
+      var $subLevelTitle    = $subLevelTemplate.find('.subcategory-title');
+
       $subLevelTemplate.attr('data-subcategory', i);
-      $subLevelTitle.text('Level '+ i);
-      $category.append($subLevelTemplate.clone());
+      $subLevelTitle.prepend('Level '+ i);
+      $category.append($subLevelTemplate);
     };
+
+//    Kanji._handleKanjiSelection();
   },
 
   _hideUserForm: function() {

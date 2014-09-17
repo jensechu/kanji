@@ -16,7 +16,8 @@ body {
 }
 
 #selectorTemplate,
-#kanjiTemplate {
+#kanjiTemplate,
+#subCategoryTemplate {
     display: none;
 }
 
