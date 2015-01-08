@@ -58,6 +58,7 @@ window.WaniKani = {
         WaniKani._setSubLevels(userLevel);
         WaniKani._setUserKanji(userKanji);
         WaniKani._hideUserForm();
+        window.Kanji._handleSelectAll();
       }
     });
   },

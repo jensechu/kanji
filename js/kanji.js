@@ -45,15 +45,16 @@ window.Kanji =  {
       var $selectedCategory = $(this);
 
       Kanji.sectionExpansion($selectedCategory);
-
-      Kanji.$category.siblings('.category-content').removeClass('expand');
-      $selectedCategory.siblings('.category-content').addClass('expand');
     });
   },
 
   sectionExpansion: function($selectedCategory) {
     Kanji.$category.siblings('.category-content').removeClass('expand');
+    Kanji.$category.siblings('.category-select-all').hide();
+    Kanji.$category.siblings('.category-deselect-all').hide();
     $selectedCategory.siblings('.category-content').addClass('expand');
+    $selectedCategory.siblings('.category-select-all').show();
+    $selectedCategory.siblings('.category-deselect-all').show();
   },
 
   _handleStrokeToggle: function() {
@@ -150,6 +151,52 @@ window.Kanji =  {
     }
   },
 
+  _initialSelectAllHide: function() {
+    $(".category-select-all").each(function() {
+      $(this).hide();
+    });
+    $(".category-deselect-all").each(function() {
+      $(this).hide();
+    });
+    $(".category-select-all-show").each(function() {
+      $(this).show();
+    });
+  },
+
+  __selectClicker: function() {
+    if (!$(this).hasClass('selected')) {
+      $(this).trigger("click");
+    }
+  },
+
+  __deselectClicker: function() {
+    if ($(this).hasClass('selected')) {
+      $(this).trigger("click");
+    }
+  },
+
+  _handleSelectAll: function() {
+    $(".category-select-all,.category-deselect-all").off("click"); // remove previous event handlers
+
+    $(".category-select-all").on('click', function() {
+      $(this).siblings(".category-content").children(".kanji-box").each(Kanji.__selectClicker);
+      $(this).siblings(".kanji-box").each(Kanji.__selectClicker);
+      $(this).removeClass("category-select-all");
+      $(this).addClass("category-deselect-all");
+      $(this).children("a").html("De-select All");
+      Kanji._handleSelectAll(); // need to readd event handlers
+    });
+
+    $(".category-deselect-all").on('click', function() {
+      $(this).siblings(".category-content").children(".kanji-box").each(Kanji.__deselectClicker);
+      $(this).siblings(".kanji-box").each(Kanji.__deselectClicker);
+      $(this).removeClass("category-deselect-all");
+      $(this).addClass("category-select-all");
+      $(this).children("a").html("Select All");
+      Kanji._handleSelectAll(); // need to readd event handlers
+    });
+  },
+
   _load: function() {
     $.getJSON('data/kanji.json', function(data) {
       $.each( data.kanji, function( i, kanji ) {
@@ -161,6 +208,8 @@ window.Kanji =  {
       Kanji._handleSectionExpansion();
       Kanji._handleKanjiSearch();
       Kanji._handleStrokeToggle();
+      Kanji._handleSelectAll();
+      Kanji._initialSelectAllHide();
     });
   }
 };
