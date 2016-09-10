@@ -1,6 +1,13 @@
 {"kanji": [
           {
             "category": "jlptn5",
+            "character": "分",
+            "onyomi": "ブン フン ブ",
+            "kunyomi": " わ.ける、 わ.け、 わ.かれる、 わ.かる、 わ.かつ",
+            "meaning": "part, minute of time, segment, understand"
+        },
+          {
+            "category": "jlptn5",
             "character": "日",
             "onyomi": "ニチ ジツ -",
             "kunyomi": "ひ -び",
