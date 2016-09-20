@@ -1,0 +1,10 @@
+[
+  {
+    "path": "/",
+    "page": "./pages/home",
+    "chunk": "main",
+    "data": {
+      "kanji": "GET https://gist.githubusercontent.com/jensechu/83d5feb5e1fc8fc71785da912f5ac738/raw/ed9e2e4fbedd3fdfc0976038159b2e697540d299/kanji.json"
+    }
+  }
+]
