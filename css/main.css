@@ -97,6 +97,10 @@ body {
   text-align: center;
 }
 
+#kanjiSelectionBox .kanji-box:hover {
+    cursor: pointer;
+}
+
 #kanjiSelectionBox .kanji-box.selected {
   color: #f00;
 }
