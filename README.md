@@ -1,5 +1,5 @@
 ## こんにちは！
-
+This is an updated version of the original site to change the application so that it uses the WaniKani v2 API rather than the v1 API, which no longer works. I am in no way associated with the original developer.
 This is a small javascript powered site that takes in `.json` data of kanji and outputs a selection box. By selecting these kanji you can make your own kanji worksheets tailored to your practicing needs.
 
 ## Features
