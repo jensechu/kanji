@@ -7,12 +7,12 @@ body {
 
 @font-face {
   font-family: StrokeOrder;
-  src: url('/fonts/KanjiStrokeOrders.ttf');
+  src: url('../fonts/KanjiStrokeOrders.ttf');
 }
 
 @font-face {
   font-family: Mitimasu;
-  src: url('/fonts/mitimasu.ttf');
+  src: url('../fonts/mitimasu.ttf');
 }
 
 #selectorTemplate,
