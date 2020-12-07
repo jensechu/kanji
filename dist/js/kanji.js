@@ -116,7 +116,7 @@ var kanji = (function (exports) {
                             categoryContent.classList.add('expand');
                     });
                 }
-                const jlptData = yield (yield fetch('../data/JLPT.json')).json();
+                const jlptData = yield (yield fetch('data/JLPT.json')).json();
                 addKanjiCategory("JLPT", jlptData);
                 // Accounts for the possibility that the toggles are
                 // still checked after a page reload.
@@ -130,7 +130,17 @@ var kanji = (function (exports) {
             WaniKani.getKanji(apiKey)
                 .then(kanji => addKanjiCategory('WaniKani', kanji), err => {
                 let errorMessage;
-                errorMessage = `Unexpected error: ${err.constructor.name}: ${err.message}`;
+                if (err instanceof WaniKani.WaniKaniError)
+                    switch (err.code) {
+                        case 401:
+                            errorMessage = 'Error: Unauthorized (did you input your API key correctly?)';
+                            break;
+                        default:
+                            errorMessage = `WaniKani API Error: ${err.message} (code ${err.code})`;
+                            break;
+                    }
+                else
+                    errorMessage = `Unexpected error: ${err.constructor.name}: ${err.message}`;
                 alert(errorMessage);
             });
         }
@@ -237,7 +247,7 @@ var kanji = (function (exports) {
             kanjiDescription.appendChild(kanjiTermKunyomi);
             const kanjiDefinitionKunyomi = document.createElement('dd');
             kanjiDefinitionKunyomi.classList.add('kanji-definition');
-            kanjiDefinitionKunyomi.innerText = kanjiData.onyomiReadings.join(' ');
+            kanjiDefinitionKunyomi.innerText = kanjiData.kunyomiReadings.join(' ');
             kanjiDescription.appendChild(kanjiDefinitionKunyomi);
             const kanjiBoxes = document.createElement('div');
             kanjiRow.appendChild(kanjiBoxes);
