@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kanji Sheets</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link rel="preload" href="fonts/KanjiStrokeOrders.ttf" as="font" type="font/ttf" />
+    <link rel="preload" href="fonts/mitimasu.ttf" as="font" type="font/ttf" />
+  </head>
+  <body>
+    <div id="container">
+      <header id="header">
+         <h1>Kanji Worksheets</h1>
+      </header>
+
+      <div id="sidebar">
+        <div class="category">
+          <h2 class="category-title">Settings</h2>
+          <div class="category-content">
+            <input type="checkbox" id="strokeOrderToggle" oninput="kanji.Kanji.toggleStrokeOrder()" />
+            <label for="strokeOrderToggle">Stroke Order</label>
+            <input type="checkbox" id="guideLinesToggle" oninput="kanji.Kanji.toggleGuideLines()" />
+            <label for="guideLinesToggle">Guide Lines</label>
+          </div>
+        </div>
+        <div class="category">
+          <h2 class="category-title">WaniKani Sync</h2>
+          <div class="category-content">
+            <p>
+              Load in your learned kanji from WaniKani to add to your worksheet.
+              Just paste in an API key from your <a href="https://www.wanikani.com/settings/personal_access_tokens" target="_blank">personal access token management page</a>.
+            </p>
+            <label for="waniKaniKey" style="display: block;">WaniKani API Key</label>
+            <input type="text" id="waniKaniKey" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" style="width: 75%;" />
+            <input type="submit" value="Sync" onclick="kanji.Kanji.loadWaniKani()" />
+            <p>Your API key is not saved or shared.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="content" class="handwriting">
+      </div>
+
+      <div id="footer">
+        <span class="author">made by <a href="https://twitter.com/jensechu">jensen</a> with &#9829;, updated by <a href="https://github.com/xelaushi">xelaushi</a> with no sleep</span>
+      </div>
+    </div>
+    <script src="js/kanji.js"></script>
+  </body>
+</html>
