@@ -56,7 +56,7 @@ export namespace Kanji {
             });
         }
 
-        const jlptData: KanjiCategory = await (await fetch('../data/JLPT.json')).json();
+        const jlptData: KanjiCategory = await (await fetch('data/JLPT.json')).json();
 
         addKanjiCategory("JLPT", jlptData);
 
@@ -75,7 +75,7 @@ export namespace Kanji {
                 err => {
                     let errorMessage;
 
-                    if (false)//err instanceof WaniKani.WaniKaniError)
+                    if (err instanceof WaniKani.WaniKaniError)
                         switch (err.code) {
                             case 401:
                                 errorMessage = 'Error: Unauthorized (did you input your API key correctly?)';
@@ -211,7 +211,7 @@ export namespace Kanji {
         kanjiDescription.appendChild(kanjiTermKunyomi);
         const kanjiDefinitionKunyomi = document.createElement('dd');
         kanjiDefinitionKunyomi.classList.add('kanji-definition');
-        kanjiDefinitionKunyomi.innerText = kanjiData.onyomiReadings.join(' ');
+        kanjiDefinitionKunyomi.innerText = kanjiData.kunyomiReadings.join(' ');
         kanjiDescription.appendChild(kanjiDefinitionKunyomi);
 
         const kanjiBoxes = document.createElement('div');
