@@ -120,7 +120,6 @@ var kanji = (function (exports) {
                 addKanjiCategory("JLPT", jlptData);
                 // Accounts for the possibility that the toggles are
                 // still checked after a page reload.
-                toggleStrokeOrder();
                 toggleGuideLines();
             });
         }
@@ -145,18 +144,6 @@ var kanji = (function (exports) {
             });
         }
         Kanji.loadWaniKani = loadWaniKani;
-        function toggleStrokeOrder() {
-            const content = document.getElementById('content');
-            if (document.getElementById('strokeOrderToggle').checked) {
-                content.classList.remove('handwriting');
-                content.classList.add('stroke-order');
-            }
-            else {
-                content.classList.remove('stroke-order');
-                content.classList.add('handwriting');
-            }
-        }
-        Kanji.toggleStrokeOrder = toggleStrokeOrder;
         function toggleGuideLines() {
             const content = document.getElementById('content');
             if (document.getElementById('guideLinesToggle').checked) {
@@ -216,9 +203,9 @@ var kanji = (function (exports) {
             document.getElementById('sidebar').appendChild(crateKanjiSelectionCategory(categoryName, category));
         }
         function createKanjiRow(kanjiId) {
+            const numHintKanjiBoxes = 6;
+            const numEmptyKanjiBoxes = 16;
             const kanjiRow = document.createElement('div');
-            const numHintKanjiBoxes = 2;
-            const numKanjiBoxes = 15;
             const kanjiData = availableKanji[kanjiId];
             kanjiRow.classList.add('kanji-row');
             kanjiRow.id = `kanji/${kanjiId}`;
@@ -239,7 +226,7 @@ var kanji = (function (exports) {
             kanjiDescription.appendChild(kanjiTermOnyomi);
             const kanjiDefinitionOnyomi = document.createElement('dd');
             kanjiDefinitionOnyomi.classList.add('kanji-definition');
-            kanjiDefinitionOnyomi.innerText = kanjiData.onyomiReadings.join(' ');
+            kanjiDefinitionOnyomi.innerText = kanjiData.onyomiReadings.join('、');
             kanjiDescription.appendChild(kanjiDefinitionOnyomi);
             const kanjiTermKunyomi = document.createElement('dt');
             kanjiTermKunyomi.classList.add('kanji-term');
@@ -247,14 +234,20 @@ var kanji = (function (exports) {
             kanjiDescription.appendChild(kanjiTermKunyomi);
             const kanjiDefinitionKunyomi = document.createElement('dd');
             kanjiDefinitionKunyomi.classList.add('kanji-definition');
-            kanjiDefinitionKunyomi.innerText = kanjiData.kunyomiReadings.join(' ');
+            kanjiDefinitionKunyomi.innerText = kanjiData.kunyomiReadings.join('、');
             kanjiDescription.appendChild(kanjiDefinitionKunyomi);
+            const kanjiVisuals = document.createElement('div');
+            kanjiVisuals.classList.add('kanji-visuals');
+            kanjiRow.appendChild(kanjiVisuals);
+            const kanjiStrokeOrder = document.createElement('div');
+            kanjiStrokeOrder.classList.add('kanji-stroke-order');
+            kanjiStrokeOrder.innerText = kanjiData.character;
+            kanjiVisuals.appendChild(kanjiStrokeOrder);
             const kanjiBoxes = document.createElement('div');
-            kanjiRow.appendChild(kanjiBoxes);
-            kanjiBoxes.appendChild(createKanjiBox(false, kanjiData.character));
+            kanjiVisuals.appendChild(kanjiBoxes);
             for (let i = 0; i < numHintKanjiBoxes; ++i)
                 kanjiBoxes.appendChild(createKanjiBox(true, kanjiData.character));
-            for (let i = 0; i < numKanjiBoxes; ++i)
+            for (let i = 0; i < numEmptyKanjiBoxes; ++i)
                 kanjiBoxes.appendChild(createKanjiBox(false));
             return kanjiRow;
         }

@@ -62,7 +62,6 @@ export namespace Kanji {
 
         // Accounts for the possibility that the toggles are
         // still checked after a page reload.
-        toggleStrokeOrder();
         toggleGuideLines();
     }
 
@@ -90,17 +89,6 @@ export namespace Kanji {
                     alert(errorMessage);
                 },
             );
-    }
-    
-    export function toggleStrokeOrder() {
-        const content = document.getElementById('content')!;
-        if ((document.getElementById('strokeOrderToggle')! as HTMLInputElement).checked) {
-            content.classList.remove('handwriting');
-            content.classList.add('stroke-order');
-        } else {
-            content.classList.remove('stroke-order');
-            content.classList.add('handwriting');
-        }
     }
 
     export function toggleGuideLines() {
@@ -173,10 +161,10 @@ export namespace Kanji {
     }
 
     function createKanjiRow(kanjiId: KanjiId): HTMLDivElement {
-        const kanjiRow = document.createElement('div');
+        const numHintKanjiBoxes = 6;
+        const numEmptyKanjiBoxes = 16;
 
-        const numHintKanjiBoxes = 2;
-        const numKanjiBoxes = 15;
+        const kanjiRow = document.createElement('div');
 
         const kanjiData = availableKanji[kanjiId];
 
@@ -202,7 +190,7 @@ export namespace Kanji {
         kanjiDescription.appendChild(kanjiTermOnyomi);
         const kanjiDefinitionOnyomi = document.createElement('dd');
         kanjiDefinitionOnyomi.classList.add('kanji-definition');
-        kanjiDefinitionOnyomi.innerText = kanjiData.onyomiReadings.join(' ');
+        kanjiDefinitionOnyomi.innerText = kanjiData.onyomiReadings.join('、');
         kanjiDescription.appendChild(kanjiDefinitionOnyomi);
 
         const kanjiTermKunyomi = document.createElement('dt');
@@ -211,16 +199,24 @@ export namespace Kanji {
         kanjiDescription.appendChild(kanjiTermKunyomi);
         const kanjiDefinitionKunyomi = document.createElement('dd');
         kanjiDefinitionKunyomi.classList.add('kanji-definition');
-        kanjiDefinitionKunyomi.innerText = kanjiData.kunyomiReadings.join(' ');
+        kanjiDefinitionKunyomi.innerText = kanjiData.kunyomiReadings.join('、');
         kanjiDescription.appendChild(kanjiDefinitionKunyomi);
 
-        const kanjiBoxes = document.createElement('div');
-        kanjiRow.appendChild(kanjiBoxes);
+        const kanjiVisuals = document.createElement('div');
+        kanjiVisuals.classList.add('kanji-visuals');
+        kanjiRow.appendChild(kanjiVisuals);
 
-        kanjiBoxes.appendChild(createKanjiBox(false, kanjiData.character));
+        const kanjiStrokeOrder = document.createElement('div');
+        kanjiStrokeOrder.classList.add('kanji-stroke-order');
+        kanjiStrokeOrder.innerText = kanjiData.character;
+        kanjiVisuals.appendChild(kanjiStrokeOrder);
+
+        const kanjiBoxes = document.createElement('div');
+        kanjiVisuals.appendChild(kanjiBoxes);
+
         for (let i = 0; i < numHintKanjiBoxes; ++i)
             kanjiBoxes.appendChild(createKanjiBox(true, kanjiData.character));
-        for (let i = 0; i < numKanjiBoxes; ++i)
+        for (let i = 0; i < numEmptyKanjiBoxes; ++i)
             kanjiBoxes.appendChild(createKanjiBox(false));
 
         return kanjiRow;
