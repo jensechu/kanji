@@ -11,7 +11,7 @@ body {
 }
 
 @font-face {
-  font-family: Mitimasu;
+  font-family: Handwriting;
   src: url('../fonts/mitimasu.ttf');
 }
 
@@ -129,7 +129,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  max-width: 980px;
+  max-width: 7.25in;
   float: left;
 }
 
@@ -145,20 +145,22 @@ body {
 }
 
 #content .kanji-definition {
-    margin: 0 30px 0 10px;
-    text-transform: capitalize;
+  font-size: 14px;
+  margin: 0 30px 0 10px;
+  text-transform: capitalize;
 }
 
-#content.handwriting .kanji-box {
-  font-family: Mitimasu;
-  font-size: 85px;
-  line-height: 95px;
+#content .kanji-visuals {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
-#content.stroke-order .kanji-box {
+#content .kanji-stroke-order {
   font-family: StrokeOrder;
-  font-size: 80px;
-  line-height: 95px;
+  font-size: calc(1in - 12px);
+  margin-right: 10px;
 }
 
 #content .kanji-box {
@@ -166,13 +168,16 @@ body {
   flex-flow: row nowrap;
 
   margin: 0 5px 5px 0;
-  width: 96px;
-  height: 96px;
+  width: 0.5in;
+  height: 0.5in;
   border: 1px solid #000;
   box-sizing: border-box;
   float: left;
-  font-size: 65px;
   text-align: center;
+
+  font-family: Handwriting;
+  font-size: calc(0.5in - 6px);
+  line-height: calc(0.5in - 1px);
 }
 
 #content .kanji-box img,
@@ -195,7 +200,7 @@ body {
 }
 
 #content .kanji-box.kanji-hint-box {
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .author {
@@ -227,7 +232,7 @@ body {
 
   #content {
     display: block;
-    width: 980px;
+    width: 7.25in;
     float: left;
   }
 
