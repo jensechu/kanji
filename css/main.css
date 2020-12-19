@@ -134,9 +134,6 @@ body {
     color: rgba(0, 0, 0, 0.15);
 }
 
-#content .kanji-box:nth-child(n+5) {
-    color: white;
-}
 
 .kanji-row {
   max-width: 980px;
@@ -161,23 +158,54 @@ body {
 
 #content.handwriting .kanji-box {
   font-family: Mitimasu;
-  font-size: 85px;
-  line-height: 95px;
+  font-size: 55px;
+  line-height: 65px;
 }
 
 #content.stroke-order .kanji-box {
   font-family: StrokeOrder;
-  font-size: 80px;
+  font-size: 50px;
 }
 
 #content .kanji-box {
     margin: 0 5px 5px 0;
-    width: 96px;
-    height: 96px;
+    width: 72px;
+    height: 72px;
     border: 1px solid #000;
     box-sizing: border-box;
     float: left;
-    font-size: 65px;
+    font-size: 55px;
+    text-align: center;
+}
+
+#content .kanji-box-inner {
+    margin: 0 5px 5px 0;
+    width: 70px;
+    height: 70px;
+    box-sizing: border-box;
+    float: left;
+    font-size: 55px;
+    text-align: center;
+}
+
+#content .kanji-box-inner-1 {
+    margin: 0 5px 5px 0;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #CCC;
+    box-sizing: border-box;
+    float: left;
+    font-size: 55px;
+    text-align: center;
+}
+
+#content .kanji-box-4-sub {
+    margin: 0 0 0 0;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #CCC;
+    box-sizing: border-box;
+    float: left;
     text-align: center;
 }
 

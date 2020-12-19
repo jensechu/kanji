@@ -1,473 +1,215 @@
 {"kanji": [
           {
             "category": "jlptn5",
-            "character": "分",
-            "onyomi": "ブン フン ブ",
-            "kunyomi": " わ.ける、 わ.け、 わ.かれる、 わ.かる、 わ.かつ",
-            "meaning": "part, minute"
-        },
-          {
-            "category": "jlptn5",
-            "character": "日",
-            "onyomi": "ニチ ジツ -",
-            "kunyomi": "ひ -び",
-            "meaning": "day, sun, Japan"
-        }, {
-            "category": "jlptn5",
             "character": "一",
-            "onyomi": "イチ イツ ヒト.",
-            "kunyomi": "ひと-",
+            "onyomi": "イチ,イツ",
+            "kunyomi": "ひと,ひと(つ)",
             "meaning": "one"
         }, {
             "category": "jlptn5",
-            "character": "国",
-            "onyomi": "コク ク",
-            "kunyomi": "",
-            "meaning": "country"
-        }, {
-            "category": "jlptn5",
-            "character": "人",
-            "onyomi": "ジン ニン -",
-            "kunyomi": "ひと -り",
-            "meaning": "person"
-        }, {
-            "category": "jlptn5",
-            "character": "年",
-            "onyomi": "ネン ト",
-            "kunyomi": "",
-            "meaning": "year"
-        }, {
-            "category": "jlptn5",
-            "character": "大",
-            "onyomi": "ダイ タイ -オオ.イ",
-            "kunyomi": "おお- おお.きい",
-            "meaning": "large, big"
-        }, {
-            "category": "jlptn5",
-            "character": "十",
-            "onyomi": "ジュウ ジッ ジュッ",
-            "kunyomi": "とお",
-            "meaning": "ten"
-        }, {
-            "category": "jlptn5",
             "character": "二",
-            "onyomi": "ニ ジ フタタ.",
-            "kunyomi": "ふた ふた.つ",
+            "onyomi": "ニ,ジ",
+            "kunyomi": "ふた,ふた(つ),ふ",
             "meaning": "two"
         }, {
             "category": "jlptn5",
-            "character": "本",
-            "onyomi": "ホン モ",
-            "kunyomi": "",
-            "meaning": "book, present, main, true, real, counter for long things"
-        }, {
-            "category": "jlptn5",
-            "character": "中",
-            "onyomi": "チュウ アタ.",
-            "kunyomi": "なか うち",
-            "meaning": "in, inside, middle, mean, center"
-        }, {
-            "category": "jlptn5",
-            "character": "長",
-            "onyomi": "チョウ オ",
-            "kunyomi": "なが.い",
-            "meaning": "long, leader"
-        }, {
-            "category": "jlptn5",
-            "character": "出",
-            "onyomi": "シュツ スイ イ.ダ",
-            "kunyomi": "で.る -で だ.す -だ.す い.でる",
-            "meaning": "exit, leave"
-        }, {
-            "category": "jlptn5",
             "character": "三",
-            "onyomi": "サン ゾウ ミッ.",
-            "kunyomi": "み み.つ",
+            "onyomi": "サン",
+            "kunyomi": "み,み(つ),みっ(つ)",
             "meaning": "three"
         }, {
             "category": "jlptn5",
-            "character": "時",
-            "onyomi": "ジ -ド",
-            "kunyomi": "とき",
-            "meaning": "time, hour"
-        }, {
-            "category": "jlptn5",
-            "character": "行",
-            "onyomi": "コウ ギョウ アン オコ.ナ",
-            "kunyomi": "い.く ゆ.く -ゆ.き -ゆき -い.き -いき おこな.う",
-            "meaning": "going, journey"
-        }, {
-            "category": "jlptn5",
-            "character": "見",
-            "onyomi": "ケン",
-            "kunyomi": "み.る み.える み.せる",
-            "meaning": "see, hopes, chances, idea, opinion, look at, visible"
-        }, {
-            "category": "jlptn5",
-            "character": "月",
-            "onyomi": "ゲツ ガツ ツ",
-            "kunyomi": "",
-            "meaning": "month, moon"
-        }, {
-            "category": "jlptn5",
-            "character": "後",
-            "onyomi": "ゴ コウ オク.レ",
-            "kunyomi": "のち うし.ろ うしろ あと",
-            "meaning": "behind, back, later"
-        }, {
-            "category": "jlptn5",
-            "character": "前",
-            "onyomi": "ゼン -マ",
-            "kunyomi": "まえ",
-            "meaning": "in front, before"
-        }, {
-            "category": "jlptn5",
-            "character": "生",
-            "onyomi": "セイ ショウ -",
-            "kunyomi": "い.きる い.かす い.ける う.まれる う.まれ うまれ う.む お.う は.える は.やす き なま なま- な.る",
-            "meaning": "life, genuine, birth"
-        }, {
-            "category": "jlptn5",
-            "character": "五",
-            "onyomi": "ゴ イツ.",
-            "kunyomi": "いつ",
-            "meaning": "five"
-        }, {
-            "category": "jlptn5",
-            "character": "間",
-            "onyomi": "カン ケン",
-            "kunyomi": "あいだ ま あい",
-            "meaning": "interval, space"
-        }, {
-            "category": "jlptn5",
-            "character": "上",
-            "onyomi": "ジョウ ショウ シャン ヨ.",
-            "kunyomi": "うえ -うえ うわ- かみ あ.げる -あ.げる あ.がる -あ.がる あ.がり -あ.がり のぼ.る のぼ.り のぼ.",
-            "meaning": "above, up"
-        }, {
-            "category": "jlptn5",
-            "character": "東",
-            "onyomi": "トウ ヒガ",
-            "kunyomi": "",
-            "meaning": "east"
-        }, {
-            "category": "jlptn5",
             "character": "四",
-            "onyomi": "シ ヨ",
-            "kunyomi": "よ よ.つ よっ.つ",
+            "onyomi": "シ",
+            "kunyomi": "よん,よ,よ(つ),よっ(つ)",
             "meaning": "four"
         }, {
             "category": "jlptn5",
-            "character": "今",
-            "onyomi": "コン キン イ",
-            "kunyomi": "",
-            "meaning": "now"
+            "character": "五",
+            "onyomi": "ゴ",
+            "kunyomi": "いつ,いつつ",
+            "meaning": "five"
         }, {
             "category": "jlptn5",
-            "character": "金",
-            "onyomi": "キン コン ゴン -ガ",
-            "kunyomi": "かね かな-",
-            "meaning": "gold"
+            "character": "六",
+            "onyomi": "ロク,リク",
+            "kunyomi": "む,む(つ),むっ(つ)",
+            "meaning": "six"
+        }, {
+            "category": "jlptn5",
+            "character": "七",
+            "onyomi": "シチ",
+            "kunyomi": "なな,なな(つ),なの",
+            "meaning": "seven"
+        }, {
+            "category": "jlptn5",
+            "character": "八",
+            "onyomi": "ハチ",
+            "kunyomi": "や,や(つ),やっ(つ)",
+            "meaning": "eight"
         }, {
             "category": "jlptn5",
             "character": "九",
-            "onyomi": "キュウ ク ココノ.",
+            "onyomi": "キュウ,ク",
             "kunyomi": "ここの",
             "meaning": "nine"
         }, {
             "category": "jlptn5",
-            "character": "入",
-            "onyomi": "ニュウ ジュ ハイ.",
-            "kunyomi": "い.る -い.る -い.り い.れる -い.れ",
-            "meaning": "enter, insert"
-        }, {
-            "category": "jlptn5",
-            "character": "学",
-            "onyomi": "ガク マナ.",
-            "kunyomi": "",
-            "meaning": "study, learning, science"
-        }, {
-            "category": "jlptn5",
-            "character": "高",
-            "onyomi": "コウ タカ.メ",
-            "kunyomi": "たか.い たか -だか たか.まる",
-            "meaning": "tall, high, expensive"
-        }, {
-            "category": "jlptn5",
-            "character": "円",
-            "onyomi": "エン マロ.ヤ",
-            "kunyomi": "まる.い まる まど まど.か",
-            "meaning": "circle, yen, round"
-        }, {
-            "category": "jlptn5",
-            "character": "子",
-            "onyomi": "シ ス ツ",
-            "kunyomi": "こ -こ",
-            "meaning": "child, sign of the rat, 11PM-1AM, first sign of Chinese zodiac"
-        }, {
-            "category": "jlptn5",
-            "character": "外",
-            "onyomi": "ガイ ゲ",
-            "kunyomi": "そと ほか はず.す はず.れる と",
-            "meaning": "outside"
-        }, {
-            "category": "jlptn5",
-            "character": "八",
-            "onyomi": "ハチ ヨ",
-            "kunyomi": "や や.つ やっ.つ",
-            "meaning": "eight"
-        }, {
-            "category": "jlptn5",
-            "character": "六",
-            "onyomi": "ロク リク ム",
-            "kunyomi": "む む.つ むっ.つ",
-            "meaning": "six"
-        }, {
-            "category": "jlptn5",
-            "character": "下",
-            "onyomi": "カ ゲ オ.リ",
-            "kunyomi": "した しも もと さ.げる さ.がる くだ.る くだ.り くだ.す -くだ.す くだ.さる お.ろす",
-            "meaning": "below, down, descend, give, low, inferior"
-        }, {
-            "category": "jlptn5",
-            "character": "来",
-            "onyomi": "ライ タイ",
-            "kunyomi": "く.る きた.る きた.す き.たす き.たる き",
-            "meaning": "come, due, next, cause, become"
-        }, {
-            "category": "jlptn5",
-            "character": "気",
-            "onyomi": "キ ケ",
-            "kunyomi": "いき",
-            "meaning": "spirit, mind"
-        }, {
-            "category": "jlptn5",
-            "character": "小",
-            "onyomi": "ショウ",
-            "kunyomi": "ちい.さい こ- お- さ",
-            "meaning": "little, small"
-        }, {
-            "category": "jlptn5",
-            "character": "七",
-            "onyomi": "シチ ナ",
-            "kunyomi": "なな なな.つ",
-            "meaning": "seven"
-        }, {
-            "category": "jlptn5",
-            "character": "山",
-            "onyomi": "サン セン ヤ",
-            "kunyomi": "",
-            "meaning": "mountain"
-        }, {
-            "category": "jlptn5",
-            "character": "話",
-            "onyomi": "ワ",
-            "kunyomi": "はな.す はなし",
-            "meaning": "tale, talk"
-        }, {
-            "category": "jlptn5",
-            "character": "女",
-            "onyomi": "ジョ ニョ ニョウ",
-            "kunyomi": "おんな",
-            "meaning": "woman, female"
-        }, {
-            "category": "jlptn5",
-            "character": "北",
-            "onyomi": "ホク キ",
-            "kunyomi": "",
-            "meaning": "north"
-        }, {
-            "category": "jlptn5",
-            "character": "午",
-            "onyomi": "ゴ",
-            "kunyomi": "うま",
-            "meaning": "noon, sign of the horse, 11AM-1PM, seventh sign of Chinese zodiac"
+            "character": "十",
+            "onyomi": "ジュウ,ジッ",
+            "kunyomi": "とお,と",
+            "meaning": "ten"
         }, {
             "category": "jlptn5",
             "character": "百",
-            "onyomi": "ヒャク ビャク モ",
-            "kunyomi": "",
+            "onyomi": "ヒャク,ビャク,ハク",
+            "kunyomi": "もも",
             "meaning": "hundred"
-        }, {
-            "category": "jlptn5",
-            "character": "書",
-            "onyomi": "ショ -ガ",
-            "kunyomi": "か.く -が.き",
-            "meaning": "write"
-        }, {
-            "category": "jlptn5",
-            "character": "先",
-            "onyomi": "セン マ.",
-            "kunyomi": "さき",
-            "meaning": "before, ahead, previous, future, precedence"
-        }, {
-            "category": "jlptn5",
-            "character": "名",
-            "onyomi": "メイ ミョウ -",
-            "kunyomi": "な",
-            "meaning": "name, noted, distinguished, reputation"
-        }, {
-            "category": "jlptn5",
-            "character": "川",
-            "onyomi": "セン カ",
-            "kunyomi": "",
-            "meaning": "stream, river"
         }, {
             "category": "jlptn5",
             "character": "千",
             "onyomi": "セン",
-            "kunyomi": "",
+            "kunyomi": "ち",
             "meaning": "thousand"
         }, {
             "category": "jlptn5",
-            "character": "水",
-            "onyomi": "スイ",
-            "kunyomi": "みず みず",
-            "meaning": "water"
+            "character": "万",
+            "onyomi": "マン,バン",
+            "kunyomi": "よろず",
+            "meaning": "ten thousand"
+        }, {
+            "category": "jlptn5",
+            "character": "円",
+            "onyomi": "エン",
+            "kunyomi": "まる(い),まる,まど,まど(か),まろ(やか)",
+            "meaning": "circle, yen, round"
+        }, {
+            "category": "jlptn5",
+            "character": "日",
+            "onyomi": "ニチ,ジツ",
+            "kunyomi": "ひ,か,~び",
+            "meaning": "day, sun, Japan, counter of days"
+        }, {
+            "category": "jlptn5",
+            "character": "週",
+            "onyomi": "シュウ",
+            "kunyomi": "",
+            "meaning": "week"
+        }, {
+            "category": "jlptn5",
+            "character": "月",
+            "onyomi": "ゲツ,ガツ,ツ",
+            "kunyomi": "つき",
+            "meaning": "month, moon"
+        }, {
+            "category": "jlptn5",
+            "character": "年",
+            "onyomi": "ネン",
+            "kunyomi": "とし",
+            "meaning": "year,counter for years"
+        }, {
+            "category": "jlptn5",
+            "character": "時",
+            "onyomi": "ジ",
+            "kunyomi": "とき,どき",
+            "meaning": "time, hour"
+        }, {
+            "category": "jlptn5",
+            "character": "間",
+            "onyomi": "カン,ケン",
+            "kunyomi": "あいだ,ま,あい",
+            "meaning": "interval, space"
+        }, {
+            "category": "jlptn5",
+            "character": "分",
+            "onyomi": "ブン,フン,ブ",
+            "kunyomi": " わ(ける)、わ(け)、わ(かれる)、わ(かる)、わ(かつ)",
+            "meaning": "part, minute"
+        },
+          {
+            "category": "jlptn5",
+            "character": "午",
+            "onyomi": "ゴ",
+            "kunyomi": "うま",
+            "meaning": "noon, sign of the horse"
+        }, {
+            "category": "jlptn5",
+            "character": "前",
+            "onyomi": "ゼン",
+            "kunyomi": "まえ",
+            "meaning": "in front, before"
+        }, {
+            "category": "jlptn5",
+            "character": "後",
+            "onyomi": "ゴ,コウ,オク(レ)",
+            "kunyomi": "のち,うし(ろ),うしろ,あと",
+            "meaning": "behind, back, later"
+        }, {
+            "category": "jlptn5",
+            "character": "今",
+            "onyomi": "コン,キン,イ",
+            "kunyomi": "いま",
+            "meaning": "now"
+        }, {
+            "category": "jlptn5",
+            "character": "先",
+            "onyomi": "セン",
+            "kunyomi": "さき",
+            "meaning": "before, ahead, previous, future, precedence"
+        }, {
+            "category": "jlptn5",
+            "character": "来",
+            "onyomi": "ライ",
+            "kunyomi": "くる,きた(る),きた(す)",
+            "meaning": "come, due, next, cause, become"
         }, {
             "category": "jlptn5",
             "character": "半",
-            "onyomi": "ハン ナカ.",
-            "kunyomi": "",
+            "onyomi": "ハン",
+            "kunyomi": "なか",
             "meaning": "half, middle, odd number, semi-, part-"
         }, {
             "category": "jlptn5",
-            "character": "男",
-            "onyomi": "ダン ナン",
-            "kunyomi": "おとこ",
-            "meaning": "male"
-        }, {
-            "category": "jlptn5",
-            "character": "西",
-            "onyomi": "セイ サイ ス ニ",
-            "kunyomi": "",
-            "meaning": "west, Spain"
-        }, {
-            "category": "jlptn5",
-            "character": "電",
-            "onyomi": "デン",
-            "kunyomi": "",
-            "meaning": "electricity"
-        }, {
-            "category": "jlptn5",
-            "character": "校",
-            "onyomi": "コウ キョ",
-            "kunyomi": "",
-            "meaning": "exam, school, printing, proof, correction"
-        }, {
-            "category": "jlptn5",
-            "character": "語",
-            "onyomi": "ゴ",
-            "kunyomi": "かた.る かた.らう",
-            "meaning": "word, speech, language"
-        }, {
-            "category": "jlptn5",
-            "character": "土",
-            "onyomi": "ド ト ツ",
-            "kunyomi": "",
-            "meaning": "soil, earth, ground, Turkey"
-        }, {
-            "category": "jlptn5",
-            "character": "木",
-            "onyomi": "ボク モク",
-            "kunyomi": "き こ",
-            "meaning": "tree, wood"
-        }, {
-            "category": "jlptn5",
-            "character": "聞",
-            "onyomi": "ブン モン",
-            "kunyomi": "き.く き.こえる",
-            "meaning": "hear, ask, listen"
-        }, {
-            "category": "jlptn5",
-            "character": "食",
-            "onyomi": "ショク ジキ ハ.",
-            "kunyomi": "く.う く.らう た.べる",
-            "meaning": "eat, food"
-        }, {
-            "category": "jlptn5",
-            "character": "車",
-            "onyomi": "シャ クル",
-            "kunyomi": "",
-            "meaning": "car"
+            "character": "毎",
+            "onyomi": "マイ",
+            "kunyomi": "ごと,つね",
+            "meaning": "every"
         }, {
             "category": "jlptn5",
             "character": "何",
             "onyomi": "カ",
-            "kunyomi": "なに なん なに- なん",
+            "kunyomi": "なに,なん,いず(れ)",
             "meaning": "what"
         }, {
             "category": "jlptn5",
-            "character": "南",
-            "onyomi": "ナン ナ ミナ",
-            "kunyomi": "",
-            "meaning": "south"
+            "character": "人",
+            "onyomi": "ジン,ニン",
+            "kunyomi": "ひと,~り",
+            "meaning": "person"
         }, {
             "category": "jlptn5",
-            "character": "万",
-            "onyomi": "マン バン ヨロ",
-            "kunyomi": "",
-            "meaning": "ten thousand"
+            "character": "男",
+            "onyomi": "ダン,ナン",
+            "kunyomi": "おとこ,お",
+            "meaning": "man,male"
         }, {
             "category": "jlptn5",
-            "character": "毎",
-            "onyomi": "マイ -ゴト.",
-            "kunyomi": "ごと",
-            "meaning": "every"
+            "character": "女",
+            "onyomi": "ジョ,ニョ,ニョウ",
+            "kunyomi": "おんな,め",
+            "meaning": "woman, female"
         }, {
             "category": "jlptn5",
-            "character": "白",
-            "onyomi": "ハク ビャク シロ.",
-            "kunyomi": "しろ しら-",
-            "meaning": "white"
-        }, {
-            "category": "jlptn5",
-            "character": "天",
-            "onyomi": "テン",
-            "kunyomi": "あまつ あめ あま",
-            "meaning": "heavens, sky, imperial"
+            "character": "子",
+            "onyomi": "シ,ス",
+            "kunyomi": "こ,ね",
+            "meaning": "child"
         }, {
             "category": "jlptn5",
             "character": "母",
-            "onyomi": "ボ",
-            "kunyomi": "はは も",
-            "meaning": "mama, mother"
-        }, {
-            "category": "jlptn5",
-            "character": "火",
-            "onyomi": "カ",
-            "kunyomi": "ひ -び ほ-",
-            "meaning": "fire"
-        }, {
-            "category": "jlptn5",
-            "character": "右",
-            "onyomi": "ウ ユウ ミ",
-            "kunyomi": "",
-            "meaning": "right"
-        }, {
-            "category": "jlptn5",
-            "character": "読",
-            "onyomi": "ドク トク トウ -ヨ.",
-            "kunyomi": "よ.む",
-            "meaning": "read"
-        }, {
-            "category": "jlptn5",
-            "character": "友",
-            "onyomi": "ユウ ト",
-            "kunyomi": "",
-            "meaning": "friend"
-        }, {
-            "category": "jlptn5",
-            "character": "左",
-            "onyomi": "サ シャ ヒダ",
-            "kunyomi": "",
-            "meaning": "left"
-        }, {
-            "category": "jlptn5",
-            "character": "休",
-            "onyomi": "キュウ",
-            "kunyomi": "やす.む やす.まる やす.める",
-            "meaning": "rest, day off, retire, sleep"
+            "onyomi": "ボ,モ",
+            "kunyomi": "はは",
+            "meaning": "mmother"
         }, {
             "category": "jlptn5",
             "character": "父",
@@ -476,16 +218,406 @@
             "meaning": "father"
         }, {
             "category": "jlptn5",
+            "character": "友",
+            "onyomi": "ユウ",
+            "kunyomi": "とも",
+            "meaning": "friend"
+        }, {
+            "category": "jlptn5",
+            "character": "火",
+            "onyomi": "カ",
+            "kunyomi": "ひ -び ほ-",
+            "meaning": "fire"
+        }, {
+            "category": "jlptn5",
+            "character": "水",
+            "onyomi": "スイ",
+            "kunyomi": "みず",
+            "meaning": "water"
+        }, {
+            "category": "jlptn5",
+            "character": "木",
+            "onyomi": "ボク,モク",
+            "kunyomi": "き,こ",
+            "meaning": "tree, wood"
+        }, {
+            "category": "jlptn5",
+            "character": "金",
+            "onyomi": "キン,コン",
+            "kunyomi": "かね,かな",
+            "meaning": "gold"
+        }, {
+            "category": "jlptn5",
+            "character": "土",
+            "onyomi": "ド,ト",
+            "kunyomi": "つち",
+            "meaning": "soil, earth, ground, Turkey"
+        }, {
+            "category": "jlptn5",
+            "character": "本",
+            "onyomi": "ホン",
+            "kunyomi": "もと",
+            "meaning": "book,present,main,origin,true,real,counter"
+        }, {
+            "category": "jlptn5",
+            "character": "川",
+            "onyomi": "セン",
+            "kunyomi": "かわ",
+            "meaning": "stream, river"
+        }, {
+             "category": "jlptn5",
+            "character": "気",
+            "onyomi": "キ,ケ",
+            "kunyomi": "",
+            "meaning": "spirit, mind"
+        }, {
+            "category": "jlptn5",
+            "character": "生",
+            "onyomi": "セイ,ショウ",
+            "kunyomi": "い(),う(まれる),お(う),は(える),き,なま,な(る)",
+            "meaning": "life, genuine, birth"
+        }, {
+           "category": "jlptn５",
+            "character": "魚",
+            "onyomi": "ギョ",
+            "kunyomi": "うお,さかな",
+            "meaning": "fish"
+        }, {
+            "category": "jlptn5",
+            "character": "天",
+            "onyomi": "テン",
+            "kunyomi": "あめ,あま",
+            "meaning": "heavens, sky, imperial"
+        }, {
+            "category": "jlptn5",
+            "character": "空",
+            "onyomi": "クウ",
+            "kunyomi": "そら,あ(く),あ(ける),から",
+            "meaning": "empty, sky, void, vacant, vacuum"
+        }, {
+            "category": "jlptn5",
+            "character": "山",
+            "onyomi": "サン,セン",
+            "kunyomi": "やま",
+            "meaning": "mountain"
+        }, {
+            "category": "jlptn5",
             "character": "雨",
             "onyomi": "ウ",
-            "kunyomi": "あめ あま- -さめ",
+            "kunyomi": "あめ,あま,さめ",
             "meaning": "rain"
         }, {
-            "category": "jlptn4",
+            "category": "jlptn5",
+            "character": "電",
+            "onyomi": "デン,テン",
+            "kunyomi": "いなずま",
+            "meaning": "electricity"
+        }, {
+            "category": "jlptn5",
+            "character": "車",
+            "onyomi": "シャ",
+            "kunyomi": "くるま",
+            "meaning": "car"
+        }, {
+            "category": "jlptn5",
+            "character": "語",
+            "onyomi": "ゴ",
+            "kunyomi": "かた(る),かた(らう)",
+            "meaning": "word, speech, language"
+        }, {
+            "category": "jlptn5",
+            "character": "耳",
+            "onyomi": "ジ",
+            "kunyomi": "耳",
+            "meaning": "ear"
+        }, {
+            "category": "jlptn5",
+            "character": "目",
+            "onyomi": "モク,ボク",
+            "kunyomi": "め,ま",
+            "meaning": "eye, look"
+        }, {
+            "category": "jlptn5",
+            "character": "口",
+            "onyomi": "コウ,ク",
+            "kunyomi": "くち",
+            "meaning": "mouth"
+        }, {
+            "category": "jlptn5",
+            "character": "手",
+            "onyomi": "シュ",
+            "kunyomi": "て,た",
+            "meaning": "hand"
+        }, {
+            "category": "jlptn5",
+            "character": "足",
+            "onyomi": "ソク",
+            "kunyomi": "あし,た(りる),た(る),た(す)",
+            "meaning": "leg, foot, add, sufficient"
+        }, {
+            "category": "jlptn5",
+            "character": "名",
+            "onyomi": "メイ,ミョウ",
+            "kunyomi": "な",
+            "meaning": "name, noted, distinguished, reputation"
+        }, {
+            "category": "jlptn5",
+            "character": "店",
+            "onyomi": "テン",
+            "kunyomi": "みせ,たな",
+            "meaning": "store, shop"
+        }, {
+            "category": "jlptn5",
+            "character": "駅",
+            "onyomi": "エキ",
+            "kunyomi": "うまや",
+            "meaning": "station"
+        }, {
+            "category": "jlptn5",
+            "character": "道",
+            "onyomi": "ドウ,トウ",
+            "kunyomi": "みち",
+            "meaning": "road, street, district, journey, course"
+        }, {
+            "category": "jlptn5",
+            "character": "社",
+            "onyomi": "シャ",
+            "kunyomi": "やしろ",
+            "meaning": "company, firm, office, association, shrine"
+        }, {
+            "category": "jlptn5",
+            "character": "国",
+            "onyomi": "コク",
+            "kunyomi": "くに",
+            "meaning": "country"
+        }, {
+            "category": "jlptn5",
+            "character": "外",
+            "onyomi": "ガイ,ゲ",
+            "kunyomi": "そと,ほか,はず(す),はず(れる)",
+            "meaning": "outside"
+        }, {
+            "category": "jlptn5",
+            "character": "学",
+            "onyomi": "ガク",
+            "kunyomi": "まなぶ",
+            "meaning": "study, learning, science"
+        }, {
+            "category": "jlptn5",
+            "character": "高",
+            "onyomi": "コウ",
+            "kunyomi": "たか(い),たか,たか(まる),たか(める),だか",
+            "meaning": "tall, high, expensive"
+        }, {
+            "category": "jlptn5",
+            "character": "上",
+            "onyomi": "ジョウ ショウ シャン ヨ.",
+            "kunyomi": "うえ,うわ,かみ,あ(げる),のぼ()",
+            "meaning": "above, up"
+        }, {
+            "category": "jlptn5",
+            "character": "下",
+            "onyomi": "カ,ゲ",
+            "kunyomi": "した,しも,もと,さ(),くだ(),お(ろす)",
+            "meaning": "below, down, descend, give, low, inferior"
+        }, {
+            "category": "jlptn5",
+            "character": "中",
+            "onyomi": "チュウ",
+            "kunyomi": "なか,うち",
+            "meaning": "in, inside, middle, mean, center"
+        }, {
+            "category": "jlptn5",
+            "character": "北",
+            "onyomi": "ホク",
+            "kunyomi": "きた",
+            "meaning": "north"
+        }, {
+            "category": "jlptn5",
+            "character": "東",
+            "onyomi": "トウ",
+            "kunyomi": "ひがし",
+            "meaning": "east"
+        }, {
+           "category": "jlptn5",
+            "character": "西",
+            "onyomi": "セイ,サイ",
+            "kunyomi": "にし",
+            "meaning": "west, Spain"
+        }, {
+            "category": "jlptn5",
+            "character": "南",
+            "onyomi": "ナン,ナ",
+            "kunyomi": "みなみ",
+            "meaning": "south"
+        }, {
+            "category": "jlptn5",
+            "character": "右",
+            "onyomi": "ウ,ユウ",
+            "kunyomi": "みぎ",
+            "meaning": "right"
+        }, {
+            "category": "jlptn5",
+            "character": "左",
+            "onyomi": "サ,シャ",
+            "kunyomi": "ひだり",
+            "meaning": "left"
+        }, {
+            "category": "jlptn5",
+            "character": "見",
+            "onyomi": "ケン",
+            "kunyomi": "み(る)",
+            "meaning": "see, hopes, chances, look at, visible"
+        }, {
+            "category": "jlptn5",
+            "character": "聞",
+            "onyomi": "ブン,モン",
+            "kunyomi": "き(く)",
+            "meaning": "hear, ask, listen"
+        }, {
+            "category": "jlptn5",
+            "character": "書",
+            "onyomi": "ショ",
+            "kunyomi": "か(く)",
+            "meaning": "write"
+        }, {
+             "category": "jlptn5",
+            "character": "読",
+            "onyomi": "ドク,トク,トウ",
+            "kunyomi": "よ(む)",
+            "meaning": "read"
+        }, {
+            "category": "jlptn5",
+            "character": "話",
+            "onyomi": "ワ",
+            "kunyomi": "はな(す),はなし",
+            "meaning": "tale, talk"
+        }, {
+            "category": "jlptn5",
+            "character": "言",
+            "onyomi": "ゲン ゴン コ",
+            "kunyomi": "い(う)",
+            "meaning": "say"
+        }, {
+            "category": "jlptn5",
+            "character": "買",
+            "onyomi": "バイ",
+            "kunyomi": "か(う)",
+            "meaning": "buy"
+        }, {
+            "category": "jlptn5",
+            "character": "行",
+            "onyomi": "コウ,ギョウ,アン,オコ.ナ",
+            "kunyomi": "い(く),ゆ(く),~ゆ(き),~ゆき,~い(き),~いき,おこな(う)",
+            "meaning": "going, journey"
+        }, {
+            "category": "jlptn5",
+            "character": "食",
+            "onyomi": "ショク,ジキ",
+            "kunyomi": "く(う),く(らう),た(べる)",
+            "meaning": "eat, food"
+        }, {
+            "category": "jlptn5",
+            "character": "飲",
+            "onyomi": "イン オン",
+            "kunyomi": "の(む)",
+            "meaning": "drink, smoke, take"
+        }, {
+            "category": "jlptn5",
+            "character": "出",
+            "onyomi": "シュツ,スイ",
+            "kunyomi": "で(る),~で,だ(す),(い)でる",
+            "meaning": "exit, leave"
+        }, {
+            "category": "jlptn5",
+            "character": "入",
+            "onyomi": "ニュウ,ジュ",
+            "kunyomi": "い(る),い(れる),はい(る),い(り),い(れ)",
+            "meaning": "enter, insert"
+        }, {
+            "category": "jlptn5",
+            "character": "休",
+            "onyomi": "キュウ",
+            "kunyomi": "やす(む),やす(まる),やす(める)",
+            "meaning": "rest, day off, retire, sleep"
+        }, {
+            "category": "jlptn5",
+            "character": "立",
+            "onyomi": "リツ,リュウ",
+            "kunyomi": "た(つ),た(てる)",
+            "meaning": "stand up"
+        }, {
+            "category": "jlptn5",
             "character": "会",
-            "onyomi": "カイ エ アツ.マ",
-            "kunyomi": "あ.う あ.わせる",
-            "meaning": "meeting, meet, party, association, interview, join"
+            "onyomi": "カイ,エ",
+            "kunyomi": "あ(う),あ(わせる)",
+            "meaning": "meeting, meet, party, association,join"
+        }, {
+            "category": "jlptn5",
+            "character": "多",
+            "onyomi": "タ",
+            "kunyomi": "おお(い),まさ(に),まさ(る)",
+            "meaning": "many, frequent, much"
+        }, {
+            "category": "jlptn5",
+            "character": "少",
+            "onyomi": "ショウ",
+            "kunyomi": "すく(ない),すこ(し)",
+            "meaning": "few, little"
+        }, {
+            "category": "jlptn5",
+            "character": "古",
+            "onyomi": "コ",
+            "kunyomi": "ふる(い),ふる",
+            "meaning": "old"
+        }, {
+            "category": "jlptn5",
+            "character": "新",
+            "onyomi": "シン",
+            "kunyomi": "あたら(しい),あら(た),にい",
+            "meaning": "new"
+        }, {
+            "category": "jlptn5",
+            "character": "大",
+            "onyomi": "ダイ,タイ",
+            "kunyomi": "おお,おお(きい)",
+            "meaning": "large,big"
+        }, {
+            "category": "jlptn5",
+            "character": "小",
+            "onyomi": "ショウ",
+            "kunyomi": "ちい(さい),こ,お,さ",
+            "meaning": "little, small"
+        }, {
+            "category": "jlptn5",
+            "character": "安",
+            "onyomi": "アン ヤス.ラ",
+            "kunyomi": "やす(い),やす(まる),やす",
+            "meaning": "relax, cheap, low"
+        }, {
+            "category": "jlptn5",
+            "character": "高",
+            "onyomi": "コウ",
+            "kunyomi": "たか(い),たか,たか()",
+            "meaning": "tall,high,expensive"
+        }, {
+            "category": "jlptn5",
+            "character": "長",
+            "onyomi": "チョウ",
+            "kunyomi": "なが(い),おさ",
+            "meaning": "long,leader,superior,senior"
+        }, {
+           "category": "jlptn5",
+            "character": "校",
+            "onyomi": "コウ,キョウ",
+            "kunyomi": "くら(べる)",
+            "meaning": "exam, school, printing, proof, correction"
+        }, {
+            "category": "jlptn5",
+            "character": "白",
+            "onyomi": "ハク,ビャク",
+            "kunyomi": "しろ,しら()",
+            "meaning": "white"
         }, {
             "category": "jlptn4",
             "character": "同",
@@ -504,12 +636,6 @@
             "onyomi": "ジ シ オノ.ズ",
             "kunyomi": "みずか.ら おの.ずから",
             "meaning": "oneself"
-        }, {
-            "category": "jlptn4",
-            "character": "社",
-            "onyomi": "シャ ヤシ",
-            "kunyomi": "",
-            "meaning": "company, firm, office, association, shrine"
         }, {
             "category": "jlptn4",
             "character": "発",
@@ -542,12 +668,6 @@
             "meaning": "direction, person, alternative"
         }, {
             "category": "jlptn4",
-            "character": "新",
-            "onyomi": "シン",
-            "kunyomi": "あたら.しい あら.た あら- にい",
-            "meaning": "new"
-        }, {
-            "category": "jlptn4",
             "character": "場",
             "onyomi": "ジョウ チョウ",
             "kunyomi": "ば",
@@ -560,22 +680,10 @@
             "meaning": "employee, member, number, the one in charge"
         }, {
             "category": "jlptn4",
-            "character": "立",
-            "onyomi": "リツ リュウ リットル -ダ.テ",
-            "kunyomi": "た.つ -た.つ た.ち- た.てる -た.てる た.て- たて- -た.て -だ.て",
-            "meaning": "stand up"
-        }, {
-            "category": "jlptn4",
             "character": "開",
             "onyomi": "カイ ア.ケ",
             "kunyomi": "ひら.く ひら.き -びら.き ひら.ける あ.く",
             "meaning": "open, unfold, unseal"
-        }, {
-            "category": "jlptn4",
-            "character": "手",
-            "onyomi": "シュ ズ",
-            "kunyomi": "て て- -て た-",
-            "meaning": "hand"
         }, {
             "category": "jlptn4",
             "character": "力",
@@ -614,22 +722,10 @@
             "meaning": "capital, 10**16"
         }, {
             "category": "jlptn4",
-            "character": "目",
-            "onyomi": "モク ボク",
-            "kunyomi": "め -め ま",
-            "meaning": "eye, class, look, insight, experience, care, favor"
-        }, {
-            "category": "jlptn4",
             "character": "通",
             "onyomi": "ツウ ツ カヨ.",
             "kunyomi": "とお.る とお.り -とお.り -どお.り とお.す とお.し -どお.し",
             "meaning": "traffic, pass through, avenue, commute, counter for letters"
-        }, {
-            "category": "jlptn4",
-            "character": "言",
-            "onyomi": "ゲン ゴン コ",
-            "kunyomi": "い.う",
-            "meaning": "say"
         }, {
             "category": "jlptn4",
             "character": "理",
@@ -740,22 +836,10 @@
             "meaning": "generation, world, society, public"
         }, {
             "category": "jlptn4",
-            "character": "多",
-            "onyomi": "タ",
-            "kunyomi": "おお.い まさ.に まさ.る",
-            "meaning": "many, frequent, much"
-        }, {
-            "category": "jlptn4",
             "character": "正",
             "onyomi": "セイ ショウ マサ.",
             "kunyomi": "ただ.しい ただ.す まさ",
             "meaning": "correct, justice, righteous, 10**40"
-        }, {
-            "category": "jlptn4",
-            "character": "安",
-            "onyomi": "アン ヤス.ラ",
-            "kunyomi": "やす.い やす.まる やす",
-            "meaning": "relax, cheap, low, quiet, rested, contented, peaceful"
         }, {
             "category": "jlptn4",
             "character": "院",
@@ -834,12 +918,6 @@
             "onyomi": "チ シ.ラセ",
             "kunyomi": "し.る",
             "meaning": "know, wisdom"
-        }, {
-            "category": "jlptn4",
-            "character": "道",
-            "onyomi": "ドウ トウ ミ",
-            "kunyomi": "",
-            "meaning": "road-way, street, district, journey, course, moral, teachings"
         }, {
             "category": "jlptn4",
             "character": "集",
@@ -950,18 +1028,6 @@
             "meaning": "possess, have, exist, happen, occur, approx"
         }, {
             "category": "jlptn4",
-            "character": "口",
-            "onyomi": "コウ ク",
-            "kunyomi": "くち",
-            "meaning": "mouth"
-        }, {
-            "category": "jlptn4",
-            "character": "少",
-            "onyomi": "ショウ",
-            "kunyomi": "すく.ない すこ.し",
-            "meaning": "few, little"
-        }, {
-            "category": "jlptn4",
             "character": "町",
             "onyomi": "チョウ",
             "kunyomi": "まち",
@@ -984,12 +1050,6 @@
             "onyomi": "ケン コン タ.",
             "kunyomi": "た.てる た.て -だ.て",
             "meaning": "build"
-        }, {
-            "category": "jlptn4",
-            "character": "空",
-            "onyomi": "クウ ムナ.シ",
-            "kunyomi": "そら あ.く あ.き あ.ける から す.く す.かす",
-            "meaning": "empty, sky, void, vacant, vacuum"
         }, {
             "category": "jlptn4",
             "character": "急",
@@ -1028,12 +1088,6 @@
             "meaning": "polish, study of, sharpen"
         }, {
             "category": "jlptn4",
-            "character": "足",
-            "onyomi": "ソク タ.",
-            "kunyomi": "あし た.りる た.る",
-            "meaning": "leg, foot, be sufficient, counter for pairs of footwear"
-        }, {
-            "category": "jlptn4",
             "character": "究",
             "onyomi": "キュウ ク キワ.メ",
             "kunyomi": "",
@@ -1056,12 +1110,6 @@
             "onyomi": "チャク ジャク",
             "kunyomi": "き.る -ぎ き.せる -き.せ つ.く つ.ける",
             "meaning": "don, arrive, wear, counter for suits of clothing"
-        }, {
-            "category": "jlptn4",
-            "character": "店",
-            "onyomi": "テン",
-            "kunyomi": "みせ たな",
-            "meaning": "store, shop"
         }, {
             "category": "jlptn4",
             "character": "病",
@@ -1196,22 +1244,10 @@
             "meaning": "homecoming, arrive at, lead to, result in"
         }, {
             "category": "jlptn4",
-            "character": "古",
-            "onyomi": "コ -フル.",
-            "kunyomi": "ふる.い ふる-",
-            "meaning": "old"
-        }, {
-            "category": "jlptn4",
             "character": "歌",
             "onyomi": "カ",
             "kunyomi": "うた うた.う",
             "meaning": "song, sing"
-        }, {
-            "category": "jlptn4",
-            "character": "買",
-            "onyomi": "バイ",
-            "kunyomi": "か.う",
-            "meaning": "buy"
         }, {
             "category": "jlptn4",
             "character": "悪",
@@ -1224,12 +1260,6 @@
             "onyomi": "ズ ト ハカ.",
             "kunyomi": "え",
             "meaning": "map, drawing, plan, unexpected, accidentally"
-        }, {
-            "category": "jlptn4",
-            "character": "週",
-            "onyomi": "シュウ",
-            "kunyomi": "",
-            "meaning": "week"
         }, {
             "category": "jlptn4",
             "character": "室",
@@ -1328,12 +1358,6 @@
             "meaning": "learn"
         }, {
             "category": "jlptn4",
-            "character": "駅",
-            "onyomi": "エキ",
-            "kunyomi": "",
-            "meaning": "station"
-        }, {
-            "category": "jlptn4",
             "character": "洋",
             "onyomi": "ヨ",
             "kunyomi": "",
@@ -1368,12 +1392,6 @@
             "onyomi": "ヨ",
             "kunyomi": "",
             "meaning": "weekday"
-        }, {
-            "category": "jlptn4",
-            "character": "飲",
-            "onyomi": "イン オン",
-            "kunyomi": "の.む -の.み",
-            "meaning": "drink, smoke, take"
         }, {
             "category": "jlptn4",
             "character": "肉",
@@ -1440,12 +1458,6 @@
             "onyomi": "ギュウ ウ",
             "kunyomi": "",
             "meaning": "cow"
-        }, {
-            "category": "jlptn4",
-            "character": "魚",
-            "onyomi": "ギョ -ザカ",
-            "kunyomi": "うお さかな",
-            "meaning": "fish"
         }, {
             "category": "jlptn4",
             "character": "兄",
@@ -3594,12 +3606,6 @@
             "onyomi": "フ ホ",
             "kunyomi": "こわ.い こわ.がる お.じる おそ.れる",
             "meaning": "dreadful, be frightened, fearful"
-        }, {
-            "category": "jlptn3",
-            "character": "耳",
-            "onyomi": "ジ ミ",
-            "kunyomi": "",
-            "meaning": "ear"
         }, {
             "category": "jlptn3",
             "character": "頂",
@@ -13271,7 +13277,7 @@
             "character": "捷",
             "onyomi": "ショウ ソウ ハヤ.",
             "kunyomi": "",
-            "meaning": "victory, fast"
+            "meaning": "victory,fast"
         }
     ]
 }
