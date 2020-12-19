@@ -23,6 +23,10 @@ window.Kanji =  {
       var $selectedKanji = $(ev.currentTarget);
       Kanji._selectKanji($selectedKanji);
     });
+    Kanji.$kanjiSelectionBox.on('click', '.kanji-box-inner', function(ev) {
+      var $selectedKanji = $(ev.currentTarget);
+      Kanji._selectKanji($selectedKanji);
+    });
   },
 
   _selectKanji: function($selectedKanji) {
@@ -88,7 +92,7 @@ window.Kanji =  {
     $kanjiKunyomi.text(kanji.kunyomi);
     $kanjiRow.attr('data-character', kanji.character);
 
-    Kanji.$contentBox.prepend($kanjiRow);
+    Kanji.$contentBox.append($kanjiRow);
   },
 
   _setKanjiCategory: function(kanji) {
