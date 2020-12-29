@@ -118,8 +118,9 @@ var kanji = (function (exports) {
                 }
                 const jlptData = yield (yield fetch('data/JLPT.json')).json();
                 addKanjiCategory("JLPT", jlptData);
-                // Accounts for the possibility that the toggles are
-                // still checked after a page reload.
+                // Accounts for the possibility that the inputs are
+                // set to non-default after a page reload.
+                setFont();
                 toggleGuideLines();
             });
         }
@@ -144,6 +145,12 @@ var kanji = (function (exports) {
             });
         }
         Kanji.loadWaniKani = loadWaniKani;
+        function setFont() {
+            const fontSelector = document.getElementById('fontSelector');
+            for (const kanjiBox of document.querySelectorAll('.kanji-box'))
+                kanjiBox.style.fontFamily = fontSelector.value;
+        }
+        Kanji.setFont = setFont;
         function toggleGuideLines() {
             const content = document.getElementById('content');
             if (document.getElementById('guideLinesToggle').checked) {
@@ -256,6 +263,7 @@ var kanji = (function (exports) {
             kanjiBox.classList.add('kanji-box');
             if (hint)
                 kanjiBox.classList.add('kanji-hint-box');
+            kanjiBox.style.fontFamily = document.getElementById('fontSelector').value;
             const guideLines = document.createElement('img');
             guideLines.src = 'resources/guide-lines.svg';
             kanjiBox.appendChild(guideLines);

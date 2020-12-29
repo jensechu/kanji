@@ -11,8 +11,18 @@ body {
 }
 
 @font-face {
-  font-family: Handwriting;
-  src: url('../fonts/mitimasu.ttf');
+  font-family: Mitimasu;
+  src: url('../fonts/Mitimasu.ttf');
+}
+
+@font-face {
+  font-family: YOzFont;
+  src: url('../fonts/YOzFont.ttf');
+}
+
+@font-face {
+  font-family: Choumei;
+  src: url('../fonts/Choumei.ttf');
 }
 
 /* Layout */
@@ -175,7 +185,7 @@ body {
   float: left;
   text-align: center;
 
-  font-family: Handwriting;
+  font-family: Mitimasu;
   font-size: calc(0.5in - 6px);
   line-height: calc(0.5in - 1px);
 }

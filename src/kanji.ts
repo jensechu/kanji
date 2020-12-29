@@ -60,8 +60,9 @@ export namespace Kanji {
 
         addKanjiCategory("JLPT", jlptData);
 
-        // Accounts for the possibility that the toggles are
-        // still checked after a page reload.
+        // Accounts for the possibility that the inputs are
+        // set to non-default after a page reload.
+        setFont();
         toggleGuideLines();
     }
 
@@ -89,6 +90,13 @@ export namespace Kanji {
                     alert(errorMessage);
                 },
             );
+    }
+
+    export function setFont() { 
+        const fontSelector = document.getElementById('fontSelector')! as HTMLSelectElement;
+
+        for (const kanjiBox of document.querySelectorAll('.kanji-box'))
+            (kanjiBox as HTMLElement).style.fontFamily = fontSelector.value;
     }
 
     export function toggleGuideLines() {
@@ -225,9 +233,9 @@ export namespace Kanji {
     function createKanjiBox(hint: boolean, character?: string): HTMLDivElement {
         const kanjiBox = document.createElement('div');
         kanjiBox.classList.add('kanji-box');
-
         if (hint)
             kanjiBox.classList.add('kanji-hint-box');
+        kanjiBox.style.fontFamily = (document.getElementById('fontSelector')! as HTMLInputElement).value;
         
         const guideLines = document.createElement('img');
         guideLines.src = 'resources/guide-lines.svg';

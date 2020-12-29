@@ -4,8 +4,6 @@
     <meta charset="utf-8" />
     <title>Kanji Sheets</title>
     <link href="css/main.css" rel="stylesheet" type="text/css" />
-    <link rel="preload" href="fonts/KanjiStrokeOrders.ttf" as="font" type="font/ttf" />
-    <link rel="preload" href="fonts/mitimasu.ttf" as="font" type="font/ttf" />
   </head>
   <body>
     <div id="container">
@@ -17,8 +15,16 @@
         <div class="category">
           <h2 class="category-title">Settings</h2>
           <div class="category-content">
+            <label for="guideLinesToggle">Guide Lines:</label>
             <input type="checkbox" id="guideLinesToggle" oninput="kanji.Kanji.toggleGuideLines()" />
-            <label for="guideLinesToggle">Guide Lines</label>
+            <br/>
+            <label for="fontSelector">Font:</label>
+            <select id="fontSelector" oninput="kanji.Kanji.setFont()"">
+              <option value="Mitimasu">Mitimasu</option>
+              <option value="YOzFont">Y.OzFont</option>
+              <option value="Choumei">Choumei</option>
+              <option value="StrokeOrder">Stroke Order</option>
+            </select>
           </div>
         </div>
         <div class="category">
