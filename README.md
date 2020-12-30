@@ -1,5 +1,4 @@
 ## こんにちは！
-This is an updated version of the original site created by Jensen. In this version, the WaniKani v2 API is used instead of the v1 API, which no longer works. I am in no way associated with the original developer. You can use this updated version on my GitHub Pages at https://xelaushi.github.io/kanji/.
 
 This is a small javascript powered site that takes in `.json` data of kanji and outputs a selection box. By selecting these kanji you can make your own kanji worksheets tailored to your practicing needs.
 
