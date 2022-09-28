@@ -2,6 +2,13 @@
 
 This is a small javascript powered site that takes in `.json` data of kanji and outputs a selection box. By selecting these kanji you can make your own kanji worksheets tailored to your practicing needs.
 
+## Run Instructions
+Use python:
+```
+cd /path/to/kanji-gen
+python -m http.server --cgi 8080
+```
+
 ## Features
 Below are some screenshots of basic usage, along with a screenshot of the WaniKani.com API integration.
 
