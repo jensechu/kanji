@@ -139,6 +139,7 @@ body {
 }
 
 .kanji-row {
+  width: 8in;
   max-width: 980px;
   float: left;
 }
