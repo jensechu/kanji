@@ -131,11 +131,11 @@ body {
 }
 
 #content .kanji-box:nth-child(n+3) {
-    color: rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.20);
 }
 
 #content .kanji-box:nth-child(n+5) {
-    color: white;
+    color: rgba(0, 0, 0, 0.10);
 }
 
 .kanji-row {
@@ -181,10 +181,13 @@ body {
   font-size: 80px;
 } */
 
-.kanji-box.first-box {
+#content .kanji-box.first-box {
   font-family: StrokeOrder;
-  font-size: 9mm;
-  line-height: 10mm;
+  font-size: 18mm;
+  line-height: 20mm;
+  width: 20mm;
+  height: 20mm;
+  margin: 0 2px 4px 0;
 }
 
 #content .kanji-box {
