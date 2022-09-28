@@ -161,13 +161,13 @@ body {
 
 #content.handwriting .kanji-box.trace {
   font-family: Mitimasu;
-  font-size: 85px;
-  line-height: 95px;
+  font-size: 8mm;
+  line-height: 10mm;
 }
 
 #content.stroke-order .kanji-box.trace {
   font-family: StrokeOrder;
-  font-size: 80px;
+  font-size: 8mm;
 }
 
 /* .kanji-box.handwriting {
@@ -183,13 +183,14 @@ body {
 
 .kanji-box.first-box {
   font-family: StrokeOrder;
-  font-size: 80px;
+  font-size: 9mm;
+  line-height: 10mm;
 }
 
 #content .kanji-box {
-    margin: 0 5px 5px 0;
-    width: 96px;
-    height: 96px;
+    margin: 0 2px 2px 0;
+    width: 10mm;
+    height: 10mm;
     border: 1px solid #000;
     box-sizing: border-box;
     float: left;
@@ -221,7 +222,7 @@ body {
   }
 
   #content {
-    width: 980px;
+    width: 8in;
     float: left;
   }
 
