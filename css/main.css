@@ -159,13 +159,29 @@ body {
     text-transform: capitalize;
 }
 
-#content.handwriting .kanji-box {
+#content.handwriting .kanji-box.trace {
   font-family: Mitimasu;
   font-size: 85px;
   line-height: 95px;
 }
 
-#content.stroke-order .kanji-box {
+#content.stroke-order .kanji-box.trace {
+  font-family: StrokeOrder;
+  font-size: 80px;
+}
+
+/* .kanji-box.handwriting {
+  font-family: Mitimasu;
+  font-size: 85px;
+  line-height: 95px;
+}
+
+.kanji-box.stroke-order {
+  font-family: StrokeOrder;
+  font-size: 80px;
+} */
+
+.kanji-box.first-box {
   font-family: StrokeOrder;
   font-size: 80px;
 }
@@ -177,7 +193,7 @@ body {
     border: 1px solid #000;
     box-sizing: border-box;
     float: left;
-    font-size: 65px;
+    /* font-size: 65px; */
     text-align: center;
 }
 
