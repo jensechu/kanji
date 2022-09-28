@@ -88,7 +88,7 @@ window.Kanji =  {
     $kanjiKunyomi.text(kanji.kunyomi);
     $kanjiRow.attr('data-character', kanji.character);
 
-    Kanji.$contentBox.prepend($kanjiRow);
+    Kanji.$contentBox.append($kanjiRow);
   },
 
   _setKanjiCategory: function(kanji) {
